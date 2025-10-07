@@ -1,0 +1,156 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Enums
+enum Role {
+  INDIVIDUAL
+  COMPANY
+  ADMIN
+}
+
+enum SubmissionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  PROCESSED
+}
+
+enum RewardType {
+  MOBILITY
+  VOUCHER
+  DISCOUNT
+  DONATION
+}
+
+enum TransactionType {
+  EARN
+  SPEND
+}
+
+enum MaterialType {
+  PLASTIC
+  METAL
+  BATTERY
+  TIRE
+  ELECTRONIC
+  OIL
+  OTHER
+}
+
+// Models
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(INDIVIDUAL)
+  walletPoints Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  company     Company?          @relation("CompanyUsers", fields: [companyId], references: [id])
+  companyId   String?
+  submissions WasteSubmission[]
+  transactions Transaction[]
+
+  @@map("users")
+}
+
+model Company {
+  id         String   @id @default(cuid())
+  name       String
+  identifier String   @unique // CNPJ or other ID
+  email      String   @unique
+  address    String?
+  certified  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  users       User[]              @relation("CompanyUsers")
+  submissions WasteSubmission[]   @relation("CompanySubmissions")
+
+  @@map("companies")
+}
+
+model CollectionPoint {
+  id               String   @id @default(cuid())
+  name             String
+  description      String?
+  lat              Float
+  lng              Float
+  acceptedMaterials MaterialType[]
+  openingHours     String?
+  active           Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  submissions WasteSubmission[]
+
+  @@map("collection_points")
+}
+
+model WasteSubmission {
+  id           String           @id @default(cuid())
+  userId       String
+  companyId    String?
+  pointId      String?
+  materialType MaterialType
+  weightKg     Float
+  images       String[]         // Array of image URLs
+  pointsEarned Int              @default(0)
+  status       SubmissionStatus @default(PENDING)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  // Relations
+  user           User             @relation(fields: [userId], references: [id])
+  company        Company?         @relation("CompanySubmissions", fields: [companyId], references: [id])
+  collectionPoint CollectionPoint? @relation(fields: [pointId], references: [id])
+
+  @@map("waste_submissions")
+}
+
+model Reward {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  costPoints  Int
+  rewardType  RewardType
+  partner     String?
+  stock       Int?
+  active      Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  // Relations
+  transactions Transaction[]
+
+  @@map("rewards")
+}
+
+model Transaction {
+  id        String          @id @default(cuid())
+  userId    String
+  rewardId  String?
+  points    Int
+  type      TransactionType
+  createdAt DateTime        @default(now())
+
+  // Relations
+  user   User    @relation(fields: [userId], references: [id])
+  reward Reward? @relation(fields: [rewardId], references: [id])
+
+  @@map("transactions")
+}
