@@ -251,7 +251,7 @@ Após executar o seed, você terá:
 ## 📞 Suporte
 
 Para dúvidas e suporte:
-- Email: suporte@aton.com.br
+- Email: jimmycastilho555@gmail.com
 - Issues: [GitHub Issues](link-do-repo/issues)
 
 ## 📄 Licença
