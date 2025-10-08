@@ -7,44 +7,44 @@ export default function AboutProject() {
   const problems = [
     {
       icon: Globe,
-      title: 'Crise dos Resíduos',
-      description: 'Mais de 2 bilhões de toneladas de resíduos são geradas anualmente no mundo',
-      stat: '2B+ ton/ano'
+      title: 'Poluição Ambiental',
+      description: 'Descarte inadequado de componentes automotivos gera impacto ambiental significativo',
+      stat: 'Alto impacto'
     },
     {
       icon: Recycle,
-      title: 'Baixa Reciclagem',
-      description: 'Apenas 20% dos resíduos globais são efetivamente reciclados',
-      stat: '80% desperdiçado'
+      title: 'Desperdício de Bancos',
+      description: 'Bancos automotivos são frequentemente descartados sem reaproveitamento adequado',
+      stat: '85% desperdiçado'
     },
     {
       icon: Target,
-      title: 'Economia Linear',
-      description: 'Modelo tradicional de produção-consumo-descarte precisa ser repensado',
-      stat: '95% linear'
+      title: 'Falta de Circularidade',
+      description: 'Indústria automotiva ainda carece de soluções eficientes de economia circular',
+      stat: 'Oportunidade'
     }
   ]
 
   const solutions = [
     {
-      icon: '🔄',
-      title: 'Circularidade Inteligente',
-      description: 'Transformamos resíduos em recursos através de processos inovadores de circularidade'
+      icon: '�',
+      title: 'Reaproveitamento de Bancos',
+      description: 'Sistema inovador para desmontar, processar e reaproveitar componentes de bancos automotivos'
     },
     {
-      icon: '🌱',
-      title: 'Banco de Materiais',
-      description: 'Sistema de camadas que organiza e potencializa diferentes tipos de materiais recicláveis'
+      icon: '🔧',
+      title: 'Sistema em Camadas',
+      description: 'Processo estruturado de separação, limpeza e reprocessamento de materiais específicos'
     },
     {
-      icon: '📊',
-      title: 'Monitoramento Inteligente',
-      description: 'Tecnologia avançada para rastreamento e otimização do processo de reciclagem'
+      icon: '♻️',
+      title: 'Economia Circular Toyota',
+      description: 'Solução personalizada para reduzir desperdício e maximizar reaproveitamento na Toyota'
     },
     {
-      icon: '🤝',
-      title: 'Parceria Sustentável',
-      description: 'Conectamos empresas, comunidades e governos em uma rede colaborativa'
+      icon: '🌍',
+      title: 'Impacto Ambiental Positivo',
+      description: 'Redução significativa da pegada de carbono através do compartilhamento de recursos'
     }
   ]
 
@@ -66,16 +66,16 @@ export default function AboutProject() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gray-900">
-              Repensando o Futuro dos
+              Revolucionando o Reaproveitamento
             </span>
             <br />
             <span className="text-black">
-              Resíduos Sólidos
+              de Bancos Automotivos
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            O Aton nasce da necessidade urgente de transformar nossa relação com os resíduos, 
-            criando um sistema circular que beneficia tanto o meio ambiente quanto a sociedade.
+            Nossa proposta para a Toyota foca na criação de um sistema inteligente de reaproveitamento 
+            de bancos, transformando desperdício em oportunidade através da economia circular.
           </p>
         </motion.div>
 

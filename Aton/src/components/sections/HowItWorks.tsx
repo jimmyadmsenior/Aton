@@ -10,36 +10,36 @@ export default function HowItWorks() {
   const processSteps = [
     {
       id: 0,
-      name: 'Coleta & Classificação',
+      name: 'Desmontagem Inteligente',
       color: 'from-gray-600 to-gray-800',
       phase: 'Primeira Camada',
-      process: 'Separação e Classificação Inteligente',
-      output: 'Materiais Organizados',
-      impact: '95% precisão',
-      icon: '🔄',
-      description: 'Coleta e classificação automática de diferentes tipos de resíduos'
+      process: 'Separação de Componentes dos Bancos',
+      output: 'Peças Classificadas',
+      impact: '100% aproveitamento',
+      icon: '�',
+      description: 'Desmontagem sistemática de bancos automotivos separando espuma, tecido e estrutura metálica'
     },
     {
       id: 1,
-      name: 'Processamento',
+      name: 'Processamento Específico',
       color: 'from-gray-700 to-gray-900',
       phase: 'Segunda Camada',
-      process: 'Transformação e Tratamento',
-      output: 'Matéria-Prima Processada',
-      impact: '80% aproveitamento',
-      icon: '♻️',
-      description: 'Transformação de resíduos em matéria-prima utilizável'
+      process: 'Limpeza e Reprocessamento por Material',
+      output: 'Componentes Renovados',
+      impact: '85% recuperação',
+      icon: '⚙️',
+      description: 'Cada material passa por processo específico: limpeza de espumas, tratamento de tecidos, reciclagem de metais'
     },
     {
       id: 2,
-      name: 'Produção Final',
+      name: 'Compartilhamento',
       color: 'from-gray-800 to-black',
       phase: 'Terceira Camada',
-      process: 'Criação de Novos Produtos',
-      output: 'Produtos Sustentáveis',
-      impact: '100% circulares',
-      icon: '🌱',
-      description: 'Criação de novos produtos a partir de materiais reciclados'
+      process: 'Redistribuição na Cadeia Toyota',
+      output: 'Novos Bancos Sustentáveis',
+      impact: '90% circularidade',
+      icon: '🔄',
+      description: 'Componentes processados retornam à cadeia produtiva Toyota como novos bancos ou peças de reposição'
     }
   ]
 
@@ -87,16 +87,16 @@ export default function HowItWorks() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gray-900">
-              O Sistema de
+              Reaproveitamento de
             </span>
             <br />
             <span className="text-black">
-              Banco de Materiais
+              Bancos Toyota
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Um sistema inovador de camadas que organiza, processa e transforma diferentes tipos 
-            de materiais recicláveis em recursos valiosos.
+            Sistema em três camadas que revoluciona o processo de desmontagem, processamento 
+            e reaproveitamento de bancos automotivos na cadeia produtiva Toyota.
           </p>
         </motion.div>
 
