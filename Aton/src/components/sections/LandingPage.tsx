@@ -23,12 +23,12 @@ export default function LandingPage() {
   ]
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
         <motion.div
-          className="absolute top-20 left-20 w-96 h-96 bg-green-500/20 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -36,7 +36,7 @@ export default function LandingPage() {
           transition={{ duration: 4, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.7, 0.4],
@@ -86,10 +86,10 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-8"
+              className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8"
             >
-              <Sparkles className="w-4 h-4 text-green-400" />
-              <span className="text-green-300 text-sm font-medium">
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-300 text-sm font-medium">
                 Inovação em Sustentabilidade
               </span>
             </motion.div>
@@ -101,11 +101,11 @@ export default function LandingPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold mb-6"
             >
-              <span className="bg-gradient-to-r from-white via-green-100 to-emerald-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-slate-200 to-blue-200 bg-clip-text text-transparent">
                 Transformando
               </span>
               <br />
-              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
                 Resíduos em Recursos
               </span>
             </motion.h1>
@@ -115,11 +115,11 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed"
             >
-              O <strong className="text-green-400">Aton</strong> revoluciona a gestão de resíduos através da{' '}
-              <span className="text-emerald-300">circularidade</span>, transformando materiais descartados em{' '}
-              <span className="text-green-300">oportunidades sustentáveis</span> para um futuro mais verde.
+              O <strong className="text-blue-400">Aton</strong> revoluciona a gestão de resíduos através da{' '}
+              <span className="text-purple-300">circularidade</span>, transformando materiais descartados em{' '}
+              <span className="text-blue-300">oportunidades sustentáveis</span> para um futuro mais verde.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -132,12 +132,12 @@ export default function LandingPage() {
               <motion.button
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 20px 40px -5px rgba(16, 185, 129, 0.4)"
+                  boxShadow: "0 20px 40px -5px rgba(59, 130, 246, 0.4)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl font-semibold text-white text-lg overflow-hidden"
+                className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 rounded-2xl font-semibold text-white text-lg overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 flex items-center space-x-2">
                   <span>Explore o Projeto</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -147,9 +147,9 @@ export default function LandingPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group flex items-center space-x-3 px-8 py-4 border-2 border-green-500/30 rounded-2xl font-semibold text-green-300 hover:border-green-400 hover:text-green-200 transition-all duration-300"
+                className="group flex items-center space-x-3 px-8 py-4 border-2 border-blue-500/30 rounded-2xl font-semibold text-blue-300 hover:border-blue-400 hover:text-blue-200 transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
+                <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
                   <Play className="w-5 h-5 ml-0.5" />
                 </div>
                 <span>Assistir Demonstração</span>
@@ -169,10 +169,10 @@ export default function LandingPage() {
                 { number: '50k+', label: 'CO₂ Evitado (kg)' }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
                     {stat.number}
                   </div>
-                  <div className="text-gray-400 text-sm mt-1">
+                  <div className="text-slate-400 text-sm mt-1">
                     {stat.label}
                   </div>
                 </div>
