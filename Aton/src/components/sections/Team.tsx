@@ -50,7 +50,7 @@ export default function Team() {
     },
     {
       name: 'Isadora Moreira',
-      role: 'CTO',
+      role: 'Product Designer',
       expertise: 'Tecnologia e Desenvolvimento',
       image: '/images/team/Isadora.jpg', // Placeholder - adicionar imagem real
       bio: 'Engenheira de software especializada em IoT e sistemas de monitoramento ambiental.',
@@ -60,7 +60,7 @@ export default function Team() {
     },
     {
       name: 'Lívia Clemente',
-      role: 'Head of Operations',
+      role: 'Product Owner',
       expertise: 'Operações e Logística',
       image: '/images/team/Lívia.jpg', // Placeholder - adicionar imagem real
       bio: 'Especialista em processos industriais e otimização de sistemas de reciclagem.',
