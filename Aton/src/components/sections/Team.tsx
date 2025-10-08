@@ -49,20 +49,20 @@ export default function Team() {
       email: 'jimmycastilho555@gmail.com'
     },
     {
-      name: 'Ana Silva',
+      name: 'Isadora Moreira',
       role: 'CTO',
       expertise: 'Tecnologia e Desenvolvimento',
-      image: '/images/team/ana.jpg', // Placeholder - adicionar imagem real
+      image: '/images/team/Isadora.jpg', // Placeholder - adicionar imagem real
       bio: 'Engenheira de software especializada em IoT e sistemas de monitoramento ambiental.',
       linkedin: '#',
       github: '#',
       email: 'ana@aton.com'
     },
     {
-      name: 'Carlos Santos',
+      name: 'Lívia Clemente',
       role: 'Head of Operations',
       expertise: 'Operações e Logística',
-      image: '/images/team/carlos.jpg', // Placeholder - adicionar imagem real
+      image: '/images/team/Lívia.jpg', // Placeholder - adicionar imagem real
       bio: 'Especialista em processos industriais e otimização de sistemas de reciclagem.',
       linkedin: '#',
       github: '#',

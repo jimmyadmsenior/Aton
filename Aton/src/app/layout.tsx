@@ -8,7 +8,7 @@ import ModernFooter from '@/components/layout/ModernFooter'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Aton - Sustentabilidade e Inovação',
+  title: 'Aton',
   description: 'Transformando resíduos em recursos através da circularidade e inovação sustentável',
   keywords: ['sustentabilidade', 'circularidade', 'inovação', 'meio ambiente', 'economia circular', 'reciclagem'],
   authors: [{ name: 'Aton Team' }],

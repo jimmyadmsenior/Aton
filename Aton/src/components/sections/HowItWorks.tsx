@@ -1,77 +1,77 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Layers, Package, Recycle, BarChart3, ArrowRight, Zap } from 'lucide-react'
+import { Bot, Brain, Zap, BarChart3, ArrowRight, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
 
 export default function HowItWorks() {
-  const [activeLayer, setActiveLayer] = useState(0)
+  const [activeStep, setActiveStep] = useState(0)
 
-  const bankLayers = [
+  const processSteps = [
     {
       id: 0,
-      name: 'EPS (Isopor)',
-      color: 'from-blue-500 to-cyan-500',
-      material: 'Poliestireno Expandido',
-      processing: 'Descontaminação e Compactação',
-      output: 'Matéria-prima para novos produtos',
-      impact: '90% redução de volume',
-      icon: '🔵',
-      description: 'Transformação de EPS em pellets para remanufatura'
+      name: 'Discovery & Analysis',
+      color: 'from-gray-600 to-gray-800',
+      phase: 'Business Assessment',
+      process: 'Workflow Analysis & Data Mapping',
+      output: 'Custom AI Strategy',
+      impact: '3x faster insights',
+      icon: '�',
+      description: 'Deep dive into your processes to identify automation opportunities'
     },
     {
       id: 1,
-      name: 'Plásticos Diversos',
-      color: 'from-green-500 to-emerald-500',
-      material: 'PET, PP, PE, PVC',
-      processing: 'Separação, Limpeza e Trituração',
-      output: 'Flakes e pellets plásticos',
-      impact: '85% aproveitamento',
-      icon: '🟢',
-      description: 'Processamento de múltiplos tipos de plásticos'
+      name: 'AI Development',
+      color: 'from-gray-700 to-gray-900',
+      phase: 'Custom Model Training',
+      process: 'Algorithm Design & Training',
+      output: 'Tailored AI Solution',
+      impact: '95% accuracy rate',
+      icon: '🤖',
+      description: 'Build and train AI models specific to your business needs'
     },
     {
       id: 2,
-      name: 'Madeira e Biomassa',
-      color: 'from-amber-500 to-orange-500',
-      material: 'Resíduos de madeira, papel',
-      processing: 'Trituração e Compostagem',
-      output: 'Biomassa energética e adubo',
-      impact: '95% reaproveitamento',
-      icon: '🟤',
-      description: 'Conversão de matéria orgânica em recursos'
+      name: 'Integration & Testing',
+      color: 'from-gray-800 to-black',
+      phase: 'System Integration',
+      process: 'API Integration & Testing',
+      output: 'Live AI Implementation',
+      impact: '99% uptime reliability',
+      icon: '⚡',
+      description: 'Seamless integration with your existing systems'
     }
   ]
 
   const steps = [
     {
-      icon: Package,
-      title: 'Coleta Inteligente',
-      description: 'Recebimento e classificação automatizada de materiais',
-      detail: 'Sistema IoT monitora e categoriza resíduos em tempo real'
+      icon: Bot,
+      title: 'Assessment & Planning',
+      description: 'Analyze workflows and identify automation opportunities',
+      detail: 'Deep dive into your business processes to map AI integration points'
     },
     {
-      icon: Layers,
-      title: 'Separação por Camadas',
-      description: 'Organização em camadas especializadas do banco',
-      detail: 'Cada material é direcionado para sua camada específica de processamento'
+      icon: Brain,
+      title: 'Custom AI Development',
+      description: 'Build tailored AI solutions for your specific needs',
+      detail: 'Design and train models optimized for your industry and requirements'
     },
     {
-      icon: Recycle,
-      title: 'Processamento Circular',
-      description: 'Transformação em novos recursos utilizáveis',
-      detail: 'Tecnologias avançadas convertem resíduos em matérias-primas'
+      icon: Zap,
+      title: 'Seamless Integration',
+      description: 'Deploy AI solutions into your existing systems',
+      detail: 'Smooth integration with minimal disruption to current operations'
     },
     {
       icon: BarChart3,
-      title: 'Impacto Mensurável',
-      description: 'Monitoramento contínuo dos benefícios ambientais',
-      detail: 'Métricas em tempo real de CO₂ evitado e recursos gerados'
+      title: 'Continuous Optimization',
+      description: 'Monitor performance and optimize AI effectiveness',
+      detail: 'Real-time analytics and continuous improvement of AI performance'
     }
   ]
 
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section id="how-it-works" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -82,20 +82,20 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-6">
-            <Zap className="w-4 h-4 text-green-400" />
-            <span className="text-green-300 text-sm font-medium">Como Funciona</span>
+          <div className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-6">
+            <Zap className="w-4 h-4 text-gray-600" />
+            <span className="text-gray-700 text-sm font-medium">Como Funciona</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="text-gray-900">
               O Sistema de
             </span>
             <br />
-            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-black">
               Banco de Materiais
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Um sistema inovador de camadas que organiza, processa e transforma diferentes tipos 
             de materiais recicláveis em recursos valiosos.
           </p>
@@ -114,26 +114,26 @@ export default function HowItWorks() {
               className="relative"
             >
               <div className="space-y-4">
-                {bankLayers.map((layer, index) => (
+                {processSteps.map((step, index) => (
                   <motion.div
-                    key={layer.id}
+                    key={step.id}
                     className={`relative cursor-pointer transition-all duration-500 ${
-                      activeLayer === index ? 'scale-105' : 'scale-100 opacity-70'
+                      activeStep === index ? 'scale-105' : 'scale-100 opacity-70'
                     }`}
-                    onClick={() => setActiveLayer(index)}
+                    onClick={() => setActiveStep(index)}
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className={`h-24 bg-gradient-to-r ${layer.color} rounded-2xl flex items-center px-6 shadow-2xl ${
-                      activeLayer === index ? 'shadow-green-500/25' : ''
+                    <div className={`h-24 bg-gradient-to-r ${step.color} rounded-2xl flex items-center px-6 shadow-lg ${
+                      activeStep === index ? 'shadow-gray-500/25' : ''
                     }`}>
-                      <span className="text-3xl mr-4">{layer.icon}</span>
+                      <span className="text-3xl mr-4">{step.icon}</span>
                       <div>
-                        <h3 className="text-white font-semibold text-lg">{layer.name}</h3>
-                        <p className="text-white/80 text-sm">{layer.material}</p>
+                        <h3 className="text-white font-semibold text-lg">{step.name}</h3>
+                        <p className="text-white/80 text-sm">{step.phase}</p>
                       </div>
                       <div className="ml-auto">
                         <ArrowRight className={`w-6 h-6 text-white transition-transform ${
-                          activeLayer === index ? 'translate-x-2' : ''
+                          activeStep === index ? 'translate-x-2' : ''
                         }`} />
                       </div>
                     </div>
@@ -150,31 +150,31 @@ export default function HowItWorks() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
                 <div className="flex items-center space-x-3 mb-6">
-                  <span className="text-4xl">{bankLayers[activeLayer].icon}</span>
-                  <h3 className="text-2xl font-bold text-white">{bankLayers[activeLayer].name}</h3>
+                  <span className="text-4xl">{processSteps[activeStep].icon}</span>
+                  <h3 className="text-2xl font-bold text-gray-900">{processSteps[activeStep].name}</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-green-400 font-semibold mb-2">Processamento</h4>
-                    <p className="text-gray-300">{bankLayers[activeLayer].processing}</p>
+                    <h4 className="text-gray-900 font-semibold mb-2">Process</h4>
+                    <p className="text-gray-600">{processSteps[activeStep].process}</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-green-400 font-semibold mb-2">Resultado</h4>
-                    <p className="text-gray-300">{bankLayers[activeLayer].output}</p>
+                    <h4 className="text-gray-900 font-semibold mb-2">Output</h4>
+                    <p className="text-gray-600">{processSteps[activeStep].output}</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-green-400 font-semibold mb-2">Impacto</h4>
-                    <p className="text-emerald-300 font-semibold">{bankLayers[activeLayer].impact}</p>
+                    <h4 className="text-gray-900 font-semibold mb-2">Impact</h4>
+                    <p className="text-black font-semibold">{processSteps[activeStep].impact}</p>
                   </div>
                 </div>
                 
-                <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
-                  <p className="text-green-200 text-sm">{bankLayers[activeLayer].description}</p>
+                <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-xl">
+                  <p className="text-gray-700 text-sm">{processSteps[activeStep].description}</p>
                 </div>
               </div>
             </motion.div>
@@ -188,7 +188,7 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-white mb-16"
+            className="text-3xl font-bold text-center text-gray-900 mb-16"
           >
             Processo de Transformação
           </motion.h3>
@@ -203,30 +203,30 @@ export default function HowItWorks() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 h-full backdrop-blur-sm hover:border-green-500/30 transition-all duration-300">
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 h-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300">
                   {/* Step Number */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl flex items-center justify-center">
                       <step.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-2xl font-bold text-green-400">
+                    <div className="text-2xl font-bold text-gray-600">
                       0{index + 1}
                     </div>
                   </div>
                   
-                  <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-green-300 transition-colors">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-black transition-colors">
                     {step.title}
                   </h4>
-                  <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300 transition-colors">
+                  <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors">
                     {step.description}
                   </p>
-                  <p className="text-xs text-green-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p className="text-xs text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity">
                     {step.detail}
                   </p>
                   
                   {/* Connection Line */}
                   {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-16 -right-4 w-8 h-0.5 bg-gradient-to-r from-green-500 to-transparent"></div>
+                    <div className="hidden lg:block absolute top-16 -right-4 w-8 h-0.5 bg-gradient-to-r from-gray-400 to-transparent"></div>
                   )}
                 </div>
               </motion.div>

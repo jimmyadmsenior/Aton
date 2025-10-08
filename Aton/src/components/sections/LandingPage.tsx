@@ -1,81 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Play, Sparkles, Recycle, TreePine, Zap } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Play, CheckCircle, Leaf } from 'lucide-react'
+
 
 export default function LandingPage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
-  const floatingElements = [
-    { icon: Recycle, delay: 0, x: '10%', y: '20%' },
-    { icon: TreePine, delay: 0.2, x: '80%', y: '30%' },
-    { icon: Sparkles, delay: 0.4, x: '20%', y: '70%' },
-    { icon: Zap, delay: 0.6, x: '90%', y: '60%' }
-  ]
-
   return (
     <section className="relative min-h-screen overflow-hidden bg-white">
-      {/* Minimalist Background */}
-      <div className="absolute inset-0">
-        {/* Subtle geometric shapes */}
-        <motion.div
-          className="absolute top-20 left-20 w-32 h-32 bg-gray-100 rounded-full opacity-50"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-32 right-32 w-24 h-24 bg-gray-200 rounded-full opacity-40"
-          animate={{
-            scale: [1.1, 1, 1.1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
-        
-        {/* Parallax Mouse Effect */}
-        <motion.div
-          className="absolute inset-0 opacity-30"
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-25"
           style={{
-            backgroundImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(16, 185, 129, 0.15) 0%, transparent 50%)`,
+            filter: 'grayscale(100%) brightness(1.1) contrast(0.9) blur(0.5px)',
           }}
-        />
+          onError={(e) => console.error('Video loading error:', e)}
+          onLoadStart={() => console.log('Video loading started')}
+          onCanPlay={() => console.log('Video can play')}
+        >
+          <source src="/videos/aMPvRVYHFQxBoB0v2qyJln83jI.mp4" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/40 to-white/60"></div>
       </div>
 
-      {/* Floating Icons */}
-      {floatingElements.map((element, index) => (
-        <motion.div
-          key={index}
-          className="absolute text-green-400/30"
-          style={{ left: element.x, top: element.y }}
-          initial={{ opacity: 0, scale: 0, rotate: 0 }}
-          animate={{
-            opacity: [0.3, 0.8, 0.3],
-            scale: [1, 1.2, 1],
-            rotate: [0, 360],
-            y: [-20, 20, -20],
-          }}
-          transition={{
-            duration: 8,
-            delay: element.delay,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <element.icon size={48} />
-        </motion.div>
-      ))}
+
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center min-h-screen">
@@ -88,9 +42,9 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-8"
             >
-              <Sparkles className="w-4 h-4 text-gray-600" />
+              <Leaf className="w-4 h-4 text-gray-600" />
               <span className="text-gray-600 text-sm font-medium uppercase tracking-wide">
-                AI AUTOMATION FOR BUSINESSES
+                SUSTENTABILIDADE E INOVAÇÃO
               </span>
             </motion.div>
 
@@ -101,7 +55,7 @@ export default function LandingPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold mb-6 text-gray-900"
             >
-              ATON AI
+              ATON
             </motion.h1>
 
             {/* Subtitle */}
@@ -111,7 +65,7 @@ export default function LandingPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
             >
-              Custom AI solutions, built for the innovators of tomorrow
+              Transformando resíduos em recursos através da economia circular
             </motion.p>
 
             {/* CTA Buttons */}
@@ -126,7 +80,7 @@ export default function LandingPage() {
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-3 bg-black text-white rounded-2xl font-medium hover:bg-gray-900 transition-colors duration-200 flex items-center space-x-2"
               >
-                <span>Get Template</span>
+                <span>Conheça o Projeto</span>
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
 
@@ -135,7 +89,7 @@ export default function LandingPage() {
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-2xl font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
               >
-                See Our Services
+                Como Funciona
               </motion.button>
             </motion.div>
 

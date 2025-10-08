@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { TrendingUp, Leaf, Zap, Users, Target, Award } from 'lucide-react'
+import { TrendingUp, Zap, Bot, Users, Target, Award } from 'lucide-react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts'
 import { useState } from 'react'
 
@@ -19,11 +19,11 @@ export default function SustainabilityImpact() {
   ]
 
   const materialDistribution = [
-    { name: 'Plásticos', value: 40, color: '#10B981' },
-    { name: 'EPS/Isopor', value: 25, color: '#3B82F6' },
-    { name: 'Madeira', value: 20, color: '#F59E0B' },
-    { name: 'Papel', value: 10, color: '#8B5CF6' },
-    { name: 'Outros', value: 5, color: '#EF4444' }
+    { name: 'Plásticos', value: 40, color: '#6B7280' },
+    { name: 'EPS/Isopor', value: 25, color: '#4B5563' },
+    { name: 'Madeira', value: 20, color: '#374151' },
+    { name: 'Papel', value: 10, color: '#9CA3AF' },
+    { name: 'Outros', value: 5, color: '#D1D5DB' }
   ]
 
   const impactMetrics = [
@@ -31,8 +31,8 @@ export default function SustainabilityImpact() {
       title: 'Material Reciclado',
       value: '94 ton',
       growth: '+28%',
-      icon: Leaf,
-      color: 'from-green-500 to-emerald-600',
+      icon: Bot,
+      color: 'from-gray-600 to-gray-800',
       description: 'Toneladas processadas este mês'
     },
     {
@@ -40,7 +40,7 @@ export default function SustainabilityImpact() {
       value: '260 ton',
       growth: '+35%',
       icon: Zap,
-      color: 'from-blue-500 to-cyan-600',
+      color: 'from-gray-700 to-gray-900',
       description: 'Emissões evitadas'
     },
     {
@@ -48,7 +48,7 @@ export default function SustainabilityImpact() {
       value: '720 MWh',
       growth: '+42%',
       icon: Target,
-      color: 'from-purple-500 to-pink-600',
+      color: 'from-gray-600 to-gray-800',
       description: 'Energia economizada'
     },
     {
@@ -56,7 +56,7 @@ export default function SustainabilityImpact() {
       value: '15',
       growth: '+50%',
       icon: Users,
-      color: 'from-orange-500 to-red-600',
+      color: 'from-gray-500 to-gray-700',
       description: 'Parceiros ativos'
     }
   ]
@@ -69,7 +69,7 @@ export default function SustainabilityImpact() {
   ]
 
   return (
-    <section id="impact" className="py-24 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="impact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -80,20 +80,20 @@ export default function SustainabilityImpact() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-6">
-            <TrendingUp className="w-4 h-4 text-green-400" />
-            <span className="text-green-300 text-sm font-medium">Impacto Mensurável</span>
+          <div className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-6">
+            <TrendingUp className="w-4 h-4 text-gray-600" />
+            <span className="text-gray-700 text-sm font-medium">Impacto Mensurável</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="text-gray-900">
               Transformação
             </span>
             <br />
-            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-black">
               Sustentável Comprovada
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Acompanhe em tempo real como o Aton está criando impacto positivo no meio ambiente 
             e na sociedade através de métricas transparentes e verificáveis.
           </p>
@@ -142,54 +142,54 @@ export default function SustainabilityImpact() {
             className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <TrendingUp className="w-6 h-6 text-green-400" />
-              <h3 className="text-xl font-semibold text-white">Evolução da Reciclagem</h3>
+              <TrendingUp className="w-6 h-6 text-gray-600" />
+              <h3 className="text-xl font-semibold text-gray-900">Evolução da Reciclagem</h3>
             </div>
             
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={recyclingData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                <XAxis dataKey="month" stroke="#9CA3AF" />
-                <YAxis stroke="#9CA3AF" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                <XAxis dataKey="month" stroke="#6B7280" />
+                <YAxis stroke="#6B7280" />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#1F2937', 
-                    border: '1px solid #374151',
+                    backgroundColor: '#FFFFFF', 
+                    border: '1px solid #E5E7EB',
                     borderRadius: '12px',
-                    color: '#F3F4F6'
+                    color: '#374151'
                   }} 
                 />
                 <Line 
                   type="monotone" 
                   dataKey="recycled" 
-                  stroke="#10B981" 
+                  stroke="#374151" 
                   strokeWidth={3}
-                  dot={{ fill: '#10B981', strokeWidth: 2, r: 6 }}
+                  dot={{ fill: '#374151', strokeWidth: 2, r: 6 }}
                   name="Material Reciclado (ton)"
                 />
                 <Line 
                   type="monotone" 
                   dataKey="co2Saved" 
-                  stroke="#3B82F6" 
+                  stroke="#6B7280" 
                   strokeWidth={2}
-                  dot={{ fill: '#3B82F6', strokeWidth: 2, r: 4 }}
+                  dot={{ fill: '#6B7280', strokeWidth: 2, r: 4 }}
                   name="CO₂ Evitado (ton)"
                 />
               </LineChart>
             </ResponsiveContainer>
           </motion.div>
 
-          {/* Material Distribution Pie Chart */}
+          {/* Solution Distribution Pie Chart */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm"
+            className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <Leaf className="w-6 h-6 text-green-400" />
-              <h3 className="text-xl font-semibold text-white">Distribuição por Material</h3>
+              <Bot className="w-6 h-6 text-gray-600" />
+              <h3 className="text-xl font-semibold text-gray-900">Distribuição por Material</h3>
             </div>
             
             <ResponsiveContainer width="100%" height={300}>
@@ -209,10 +209,10 @@ export default function SustainabilityImpact() {
                 </Pie>
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#1F2937', 
-                    border: '1px solid #374151',
+                    backgroundColor: '#FFFFFF', 
+                    border: '1px solid #E5E7EB',
                     borderRadius: '12px',
-                    color: '#F3F4F6'
+                    color: '#374151'
                   }} 
                 />
               </PieChart>
@@ -225,7 +225,7 @@ export default function SustainabilityImpact() {
                     className="w-3 h-3 rounded-full" 
                     style={{ backgroundColor: item.color }}
                   ></div>
-                  <span className="text-sm text-gray-300">{item.name}</span>
+                  <span className="text-sm text-gray-700">{item.name}</span>
                   <span className="text-sm text-gray-500">{item.value}%</span>
                 </div>
               ))}
@@ -257,21 +257,21 @@ export default function SustainabilityImpact() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-6"
+                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
               >
                 <div className="flex justify-between items-center mb-4">
-                  <h4 className="text-lg font-semibold text-white">{goal.goal}</h4>
-                  <span className="text-sm text-gray-400">Meta: {goal.target}</span>
+                  <h4 className="text-lg font-semibold text-gray-900">{goal.goal}</h4>
+                  <span className="text-sm text-gray-600">Meta: {goal.target}</span>
                 </div>
                 
                 <div className="mb-3">
-                  <div className="flex justify-between text-sm text-gray-300 mb-2">
+                  <div className="flex justify-between text-sm text-gray-600 mb-2">
                     <span>Progresso</span>
                     <span>{goal.progress}%</span>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-3">
+                  <div className="w-full bg-gray-200 rounded-full h-3">
                     <motion.div
-                      className="bg-gradient-to-r from-green-500 to-emerald-500 h-3 rounded-full"
+                      className="bg-gradient-to-r from-gray-600 to-gray-800 h-3 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${goal.progress}%` }}
                       transition={{ duration: 1.5, delay: index * 0.2 }}
