@@ -118,7 +118,7 @@ export default function Team() {
             Team Behind Success
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Meet the experts behind our sustainability mission—driven to deliver smart solutions.
+            Conheça os especialistas por trás de nossa missão de sustentabilidade—comprometidos em entregar soluções inteligentes.
           </p>
         </motion.div>
 
@@ -263,9 +263,9 @@ export default function Team() {
         >
           <div className="bg-gray-50 border border-gray-200 rounded-3xl p-12">
             <Users className="w-16 h-16 text-gray-700 mx-auto mb-6" />
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Ready to Join Our Mission?</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Pronto para Participar da Nossa Missão?</h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Connect with our team to learn more about sustainable innovation and how we can work together.
+              Conecte-se com nossa equipe para saber mais sobre inovação sustentável e como podemos trabalhar juntos.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <motion.a
@@ -274,7 +274,7 @@ export default function Team() {
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-3 bg-black text-white rounded-2xl font-medium hover:bg-gray-900 transition-colors duration-200"
               >
-                Get Started
+                Começar
               </motion.a>
               <motion.a
                 href="#about"
@@ -282,7 +282,7 @@ export default function Team() {
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-2xl font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
               >
-                Learn More
+                Saiba Mais
               </motion.a>
             </div>
           </div>

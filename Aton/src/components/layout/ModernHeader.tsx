@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -28,8 +29,12 @@ export default function ModernHeader() {
   return (
     <motion.header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' : 'bg-white/80 backdrop-blur-sm'
+        scrolled ? 'bg-white/15 backdrop-blur-xl shadow-md border-b border-white/5' : 'bg-white/8 backdrop-blur-lg'
       }`}
+      style={{
+        backdropFilter: 'blur(25px)',
+        WebkitBackdropFilter: 'blur(25px)',
+      }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -41,14 +46,18 @@ export default function ModernHeader() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
-                  <Leaf className="w-6 h-6 text-white" />
-                </div>
+                <Image
+                  src="/images/team/Logo.jpg"
+                  alt="Aton Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-xl object-cover"
+                />
               </div>
               <span className="text-2xl font-bold text-black">
-                OrbAI
+                ATON
               </span>
             </Link>
           </motion.div>
@@ -88,7 +97,7 @@ export default function ModernHeader() {
               whileTap={{ scale: 0.98 }}
               className="px-6 py-2 bg-black text-white rounded-2xl font-medium hover:bg-gray-900 transition-colors duration-200"
             >
-              Get Started
+              Começar
             </motion.button>
           </motion.div>
 
@@ -143,7 +152,7 @@ export default function ModernHeader() {
                   className="pt-4 border-t border-gray-200"
                 >
                   <button className="w-full px-4 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-900 transition-colors duration-200">
-                    Get Started
+                    Começar
                   </button>
                 </motion.div>
               </div>

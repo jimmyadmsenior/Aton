@@ -51,12 +51,12 @@ export default function ModernFooter() {
                 <Leaf className="w-7 h-7 text-white" />
               </div>
               <span className="text-2xl font-bold text-black">
-                OrbAI
+                ATON
               </span>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Custom AI solutions, built for the innovators of tomorrow. 
-              Delivering smart automation and intelligent business growth.
+              Soluções sustentáveis de economia circular, construídas para os inovadores de amanhã. 
+              Transformando resíduos em recursos através de tecnologia inteligente.
             </p>
             
             {/* Social links */}
@@ -111,7 +111,7 @@ export default function ModernFooter() {
           className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center"
         >
           <p className="text-gray-600 text-sm">
-            © 2024 OrbAI. All rights reserved.
+            © 2024 ATON. Todos os direitos reservados.
           </p>
           <div className="flex items-center space-x-6 mt-4 sm:mt-0">
             <Link href="#" className="text-gray-600 hover:text-black text-sm transition-colors">
