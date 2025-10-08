@@ -1,22 +1,19 @@
-import { Hero } from '@/components/sections/Hero'
-import { Features } from '@/components/sections/Features'
-import { Impact } from '@/components/sections/Impact'
-import { Partners } from '@/components/sections/Partners'
+import LandingPage from '@/components/sections/LandingPage'
+import AboutProject from '@/components/sections/AboutProject'
+import HowItWorks from '@/components/sections/HowItWorks'
+import SustainabilityImpact from '@/components/sections/SustainabilityImpact'
+import Chatbot from '@/components/sections/Chatbot'
+import Team from '@/components/sections/Team'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <Hero />
-      
-      {/* Features Section */}
-      <Features />
-      
-      {/* Impact Numbers Section */}
-      <Impact />
-      
-      {/* Partners Section */}
-      <Partners />
+    <div className="bg-slate-900 min-h-screen">
+      <LandingPage />
+      <AboutProject />
+      <HowItWorks />
+      <SustainabilityImpact />
+      <Chatbot />
+      <Team />
     </div>
   )
 }
