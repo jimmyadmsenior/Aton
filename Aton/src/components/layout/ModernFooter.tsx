@@ -32,9 +32,9 @@ export default function ModernFooter() {
   ]
 
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+    <footer className="relative bg-white border-t border-gray-200">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-transparent to-emerald-500/5"></div>
+      <div className="absolute inset-0 bg-gray-50/50"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main footer content */}
@@ -47,16 +47,16 @@ export default function ModernFooter() {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-600 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
                 <Leaf className="w-7 h-7 text-white" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Aton
+              <span className="text-2xl font-bold text-black">
+                OrbAI
               </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Transformando resíduos em recursos através da inovação e circularidade. 
-              Construindo um futuro mais sustentável para as próximas gerações.
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              Custom AI solutions, built for the innovators of tomorrow. 
+              Delivering smart automation and intelligent business growth.
             </p>
             
             {/* Social links */}
@@ -67,7 +67,7 @@ export default function ModernFooter() {
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-gray-400 hover:text-green-400 hover:bg-slate-700 transition-all duration-300"
+                  className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 hover:text-black hover:bg-gray-200 transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -83,13 +83,13 @@ export default function ModernFooter() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">{category}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">{category}</h3>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-colors duration-300 group"
+                      className="flex items-center space-x-2 text-gray-600 hover:text-black transition-colors duration-300 group"
                     >
                       {'icon' in link && link.icon && <link.icon className="w-4 h-4" />}
                       <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -108,24 +108,21 @@ export default function ModernFooter() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center"
+          className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm">
-            © 2024 Aton. Todos os direitos reservados.
+          <p className="text-gray-600 text-sm">
+            © 2024 OrbAI. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 mt-4 sm:mt-0">
-            <Link href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
-              Política de Privacidade
+            <Link href="#" className="text-gray-600 hover:text-black text-sm transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
-              Termos de Uso
+            <Link href="#" className="text-gray-600 hover:text-black text-sm transition-colors">
+              Terms of Service
             </Link>
           </div>
         </motion.div>
       </div>
-
-      {/* Bottom gradient line */}
-      <div className="h-1 bg-gradient-to-r from-green-500 via-emerald-500 to-green-500"></div>
     </footer>
   )
 }

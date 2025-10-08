@@ -49,7 +49,7 @@ export default function AboutProject() {
   ]
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -60,20 +60,20 @@ export default function AboutProject() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-6">
-            <Lightbulb className="w-4 h-4 text-green-400" />
-            <span className="text-green-300 text-sm font-medium">O Projeto</span>
+          <div className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-6">
+            <Lightbulb className="w-4 h-4 text-gray-600" />
+            <span className="text-gray-700 text-sm font-medium">O Projeto</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="text-gray-900">
               Repensando o Futuro dos
             </span>
             <br />
-            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-black">
               Resíduos Sólidos
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             O Aton nasce da necessidade urgente de transformar nossa relação com os resíduos, 
             criando um sistema circular que beneficia tanto o meio ambiente quanto a sociedade.
           </p>
@@ -86,7 +86,7 @@ export default function AboutProject() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-red-400 mb-12 text-center"
+            className="text-2xl md:text-3xl font-bold text-gray-900 mb-12 text-center"
           >
             🚨 O Problema que Enfrentamos
           </motion.h3>
@@ -101,17 +101,17 @@ export default function AboutProject() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 h-full backdrop-blur-sm hover:border-red-500/30 transition-all duration-300">
+                <div className="bg-white border border-gray-200 rounded-2xl p-8 h-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
-                      <problem.icon className="w-6 h-6 text-red-400" />
+                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+                      <problem.icon className="w-6 h-6 text-gray-600" />
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-red-400">{problem.stat}</div>
+                      <div className="text-2xl font-bold text-black">{problem.stat}</div>
                     </div>
                   </div>
-                  <h4 className="text-xl font-semibold text-white mb-4">{problem.title}</h4>
-                  <p className="text-gray-400 leading-relaxed">{problem.description}</p>
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4">{problem.title}</h4>
+                  <p className="text-gray-600 leading-relaxed">{problem.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -125,7 +125,7 @@ export default function AboutProject() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-green-400 mb-12 text-center"
+            className="text-2xl md:text-3xl font-bold text-gray-900 mb-12 text-center"
           >
             ✨ Nossa Solução Inovadora
           </motion.h3>
@@ -140,18 +140,18 @@ export default function AboutProject() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className="bg-gradient-to-br from-slate-800/80 to-slate-700/40 border border-green-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-green-400/40 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500">
+                <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-500">
                   <div className="flex items-start space-x-4">
                     <div className="text-4xl">{solution.icon}</div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-green-300 transition-colors">
+                      <h4 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-black transition-colors">
                         {solution.title}
                       </h4>
-                      <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                      <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
                         {solution.description}
                       </p>
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-green-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight className="w-5 h-5 text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
               </motion.div>
@@ -165,15 +165,15 @@ export default function AboutProject() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-24 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-500/10 border border-green-500/20 rounded-3xl p-12 text-center"
+          className="mt-24 bg-gray-50 border border-gray-200 rounded-3xl p-12 text-center"
         >
-          <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-6" />
-          <h3 className="text-3xl font-bold text-white mb-6">Nossa Missão</h3>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Criar um <span className="text-green-400 font-semibold">ecossistema circular</span> onde cada resíduo 
+          <CheckCircle className="w-16 h-16 text-gray-600 mx-auto mb-6" />
+          <h3 className="text-3xl font-bold text-gray-900 mb-6">Nossa Missão</h3>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Criar um <span className="text-black font-semibold">ecossistema circular</span> onde cada resíduo 
             se torna um recurso valioso, contribuindo para um planeta mais sustentável e uma economia mais justa. 
             Através da inovação e colaboração, transformamos desafios ambientais em 
-            <span className="text-emerald-400 font-semibold"> oportunidades de crescimento sustentável</span>.
+            <span className="text-gray-900 font-semibold"> oportunidades de crescimento sustentável</span>.
           </p>
         </motion.div>
 

@@ -1,81 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Play, Sparkles, Recycle, TreePine, Zap } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Play, CheckCircle, Leaf } from 'lucide-react'
+
 
 export default function LandingPage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
-  const floatingElements = [
-    { icon: Recycle, delay: 0, x: '10%', y: '20%' },
-    { icon: TreePine, delay: 0.2, x: '80%', y: '30%' },
-    { icon: Sparkles, delay: 0.4, x: '20%', y: '70%' },
-    { icon: Zap, delay: 0.6, x: '90%', y: '60%' }
-  ]
-
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        {/* Gradient Orbs */}
-        <motion.div
-          className="absolute top-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4],
-          }}
-          transition={{ duration: 5, repeat: Infinity }}
-        />
-        
-        {/* Parallax Mouse Effect */}
-        <motion.div
-          className="absolute inset-0 opacity-30"
+    <section className="relative min-h-screen overflow-hidden bg-white">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-25"
           style={{
-            backgroundImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(16, 185, 129, 0.15) 0%, transparent 50%)`,
+            filter: 'grayscale(100%) brightness(1.1) contrast(0.9) blur(0.5px)',
           }}
-        />
+          onError={(e) => console.error('Video loading error:', e)}
+          onLoadStart={() => console.log('Video loading started')}
+          onCanPlay={() => console.log('Video can play')}
+        >
+          <source src="/videos/aMPvRVYHFQxBoB0v2qyJln83jI.mp4" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/40 to-white/60"></div>
       </div>
 
-      {/* Floating Icons */}
-      {floatingElements.map((element, index) => (
-        <motion.div
-          key={index}
-          className="absolute text-green-400/30"
-          style={{ left: element.x, top: element.y }}
-          initial={{ opacity: 0, scale: 0, rotate: 0 }}
-          animate={{
-            opacity: [0.3, 0.8, 0.3],
-            scale: [1, 1.2, 1],
-            rotate: [0, 360],
-            y: [-20, 20, -20],
-          }}
-          transition={{
-            duration: 8,
-            delay: element.delay,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <element.icon size={48} />
-        </motion.div>
-      ))}
+
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center min-h-screen">
@@ -86,11 +40,11 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8"
+              className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-8"
             >
-              <Sparkles className="w-4 h-4 text-blue-400" />
-              <span className="text-blue-300 text-sm font-medium">
-                Inovação em Sustentabilidade
+              <Leaf className="w-4 h-4 text-gray-600" />
+              <span className="text-gray-600 text-sm font-medium uppercase tracking-wide">
+                SUSTENTABILIDADE E INOVAÇÃO
               </span>
             </motion.div>
 
@@ -99,15 +53,9 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-5xl md:text-7xl font-bold mb-6 text-gray-900"
             >
-              <span className="bg-gradient-to-r from-white via-slate-200 to-blue-200 bg-clip-text text-transparent">
-                Transformando
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
-                Resíduos em Recursos
-              </span>
+              ATON
             </motion.h1>
 
             {/* Subtitle */}
@@ -115,11 +63,9 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
             >
-              O <strong className="text-blue-400">Aton</strong> revoluciona a gestão de resíduos através da{' '}
-              <span className="text-purple-300">circularidade</span>, transformando materiais descartados em{' '}
-              <span className="text-blue-300">oportunidades sustentáveis</span> para um futuro mais verde.
+              Transformando resíduos em recursos através da economia circular
             </motion.p>
 
             {/* CTA Buttons */}
@@ -130,29 +76,20 @@ export default function LandingPage() {
               className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
             >
               <motion.button
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px -5px rgba(59, 130, 246, 0.4)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 rounded-2xl font-semibold text-white text-lg overflow-hidden"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-3 bg-black text-white rounded-2xl font-medium hover:bg-gray-900 transition-colors duration-200 flex items-center space-x-2"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex items-center space-x-2">
-                  <span>Explore o Projeto</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <span>Conheça o Projeto</span>
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
 
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center space-x-3 px-8 py-4 border-2 border-blue-500/30 rounded-2xl font-semibold text-blue-300 hover:border-blue-400 hover:text-blue-200 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-2xl font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
               >
-                <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-                  <Play className="w-5 h-5 ml-0.5" />
-                </div>
-                <span>Assistir Demonstração</span>
+                Como Funciona
               </motion.button>
             </motion.div>
 
@@ -169,10 +106,10 @@ export default function LandingPage() {
                 { number: '50k+', label: 'CO₂ Evitado (kg)' }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
+                  <div className="text-2xl md:text-3xl font-bold text-gray-900">
                     {stat.number}
                   </div>
-                  <div className="text-slate-400 text-sm mt-1">
+                  <div className="text-gray-600 text-sm mt-1">
                     {stat.label}
                   </div>
                 </div>

@@ -28,7 +28,7 @@ export default function ModernHeader() {
   return (
     <motion.header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-2xl' : 'bg-transparent'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' : 'bg-white/80 backdrop-blur-sm'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -43,13 +43,12 @@ export default function ModernHeader() {
           >
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-600 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Aton
+              <span className="text-2xl font-bold text-black">
+                OrbAI
               </span>
             </Link>
           </motion.div>
@@ -65,13 +64,13 @@ export default function ModernHeader() {
               >
                 <Link
                   href={item.href}
-                  className="group relative flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300"
+                  className="group relative flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-black transition-all duration-300"
                 >
-                  <item.icon className="w-4 h-4 group-hover:text-green-400 transition-colors" />
-                  <span className="font-medium group-hover:text-green-400 transition-colors">
+                  <item.icon className="w-4 h-4 group-hover:text-gray-900 transition-colors" />
+                  <span className="font-medium group-hover:text-black transition-colors">
                     {item.name}
                   </span>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 group-hover:w-full transition-all duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></div>
                 </Link>
               </motion.div>
             ))}
@@ -85,12 +84,11 @@ export default function ModernHeader() {
             transition={{ delay: 0.6 }}
           >
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(16, 185, 129, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="relative px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl font-semibold text-white overflow-hidden group"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-2 bg-black text-white rounded-2xl font-medium hover:bg-gray-900 transition-colors duration-200"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative z-10">Fale Conosco</span>
+              Get Started
             </motion.button>
           </motion.div>
 
@@ -99,7 +97,7 @@ export default function ModernHeader() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-300 hover:text-white transition-colors"
+              className="p-2 text-gray-600 hover:text-black transition-colors"
             >
               {mobileMenuOpen ? (
                 <XMarkIcon className="w-6 h-6" />
@@ -118,7 +116,7 @@ export default function ModernHeader() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-slate-800/95 backdrop-blur-md rounded-2xl mt-2 mb-4 overflow-hidden"
+              className="lg:hidden bg-white border border-gray-200 rounded-2xl mt-2 mb-4 overflow-hidden shadow-lg"
             >
               <div className="px-4 py-6 space-y-4">
                 {navigation.map((item, index) => (
@@ -130,7 +128,7 @@ export default function ModernHeader() {
                   >
                     <Link
                       href={item.href}
-                      className="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300"
+                      className="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:text-black hover:bg-gray-100 transition-all duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <item.icon className="w-5 h-5" />
@@ -142,10 +140,10 @@ export default function ModernHeader() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="pt-4 border-t border-slate-700"
+                  className="pt-4 border-t border-gray-200"
                 >
-                  <button className="w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl font-semibold text-white">
-                    Fale Conosco
+                  <button className="w-full px-4 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-900 transition-colors duration-200">
+                    Get Started
                   </button>
                 </motion.div>
               </div>
