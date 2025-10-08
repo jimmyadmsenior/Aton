@@ -192,7 +192,7 @@ export default function Chatbot() {
             </div>
 
             {/* Chat Messages */}
-            <div className="h-96 overflow-y-auto p-6 space-y-4">
+            <div className="h-96 overflow-y-auto p-6 space-y-4 dark-scrollbar">
               <AnimatePresence>
                 {messages.map((message) => (
                   <motion.div
