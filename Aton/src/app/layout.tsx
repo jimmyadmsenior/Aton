@@ -2,15 +2,15 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import ModernHeader from '@/components/layout/ModernHeader'
+import ModernFooter from '@/components/layout/ModernFooter'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Aton - Transformando Resíduos em Mobilidade Sustentável',
-  description: 'Plataforma que transforma resíduos em mobilidade sustentável através de um sistema de recompensas por reciclagem.',
-  keywords: ['sustentabilidade', 'reciclagem', 'mobilidade', 'meio ambiente', 'economia circular'],
+  title: 'Aton - Sustentabilidade e Inovação',
+  description: 'Transformando resíduos em recursos através da circularidade e inovação sustentável',
+  keywords: ['sustentabilidade', 'circularidade', 'inovação', 'meio ambiente', 'economia circular', 'reciclagem'],
   authors: [{ name: 'Aton Team' }],
   creator: 'Aton',
   publisher: 'Aton',
@@ -23,14 +23,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} bg-slate-900 text-white antialiased overflow-x-hidden`}>
         <Providers>
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <main className="flex-1">
+          <div className="min-h-screen">
+            <ModernHeader />
+            <main>
               {children}
             </main>
-            <Footer />
+            <ModernFooter />
           </div>
         </Providers>
       </body>
