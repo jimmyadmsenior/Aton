@@ -84,10 +84,28 @@ export default function Chatbot() {
       timestamp: new Date()
     }
     
+    // Tentar encontrar uma resposta relacionada nas perguntas predefinidas
+    const lowerInput = inputMessage.toLowerCase()
+    let botResponse = ''
+    
+    if (lowerInput.includes('banco') || lowerInput.includes('reaproveitamento') || lowerInput.includes('funciona')) {
+      botResponse = predefinedQuestions[0].answer
+    } else if (lowerInput.includes('econom') || lowerInput.includes('impacto') || lowerInput.includes('custo')) {
+      botResponse = predefinedQuestions[1].answer
+    } else if (lowerInput.includes('material') || lowerInput.includes('componente') || lowerInput.includes('espuma')) {
+      botResponse = predefinedQuestions[2].answer
+    } else if (lowerInput.includes('implementa') || lowerInput.includes('toyota') || lowerInput.includes('como')) {
+      botResponse = predefinedQuestions[3].answer
+    } else if (lowerInput.includes('ambiental') || lowerInput.includes('sustentab') || lowerInput.includes('benefício')) {
+      botResponse = predefinedQuestions[4].answer
+    } else {
+      botResponse = 'Obrigado pela sua pergunta! Baseado no que você perguntou, recomendo que consulte as perguntas sugeridas abaixo para respostas mais detalhadas, ou entre em contato conosco através do email jimmycastilho555@gmail.com.'
+    }
+    
     const botMessage: Message = {
       id: messages.length + 2,
       type: 'bot',
-      content: 'Obrigado pela sua pergunta! Para uma resposta mais detalhada, por favor entre em contato conosco através do email jimmycastilho555@gmail.com ou escolha uma das perguntas sugeridas acima.',
+      content: botResponse,
       timestamp: new Date()
     }
     
@@ -211,12 +229,11 @@ export default function Chatbot() {
               </AnimatePresence>
               
               {/* Suggested Questions inside Chat */}
-              {messages.length <= 1 && (
-                <div className="space-y-3 mt-6">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <HelpCircle className="w-4 h-4 text-gray-400" />
-                    <p className="text-sm text-gray-400 font-medium">Perguntas Sugeridas:</p>
-                  </div>
+              <div className="space-y-3 mt-6">
+                <div className="flex items-center space-x-2 mb-4">
+                  <HelpCircle className="w-4 h-4 text-gray-400" />
+                  <p className="text-sm text-gray-400 font-medium">Perguntas Sugeridas:</p>
+                </div>
                   <div className="grid grid-cols-1 gap-2">
                     {predefinedQuestions.map((item, index) => (
                       <motion.button
@@ -239,7 +256,6 @@ export default function Chatbot() {
                     ))}
                   </div>
                 </div>
-              )}
             </div>
 
             {/* Chat Input */}
