@@ -42,7 +42,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-8"
             >
-              <Leaf className="w-4 h-4 text-gray-600" />
+              <Leaf className="w-4 h-4 text-black" />
               <span className="text-gray-600 text-sm font-medium uppercase tracking-wide">
                 DESAFIO TOYOTA • IDEIAS ON
               </span>
