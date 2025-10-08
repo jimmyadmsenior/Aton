@@ -15,9 +15,9 @@ export default function LandingPage() {
           loop 
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-25"
+          className="w-full h-full object-cover opacity-40"
           style={{
-            filter: 'grayscale(100%) brightness(1.1) contrast(0.9) blur(0.5px)',
+            filter: 'grayscale(100%) brightness(1.4) contrast(1.1) blur(0.3px)',
           }}
           onError={(e) => console.error('Video loading error:', e)}
           onLoadStart={() => console.log('Video loading started')}
@@ -26,7 +26,7 @@ export default function LandingPage() {
           <source src="/videos/aMPvRVYHFQxBoB0v2qyJln83jI.mp4" type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/40 to-white/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/25 to-white/40"></div>
       </div>
 
 

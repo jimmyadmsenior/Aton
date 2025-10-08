@@ -17,7 +17,7 @@ export default function Chatbot() {
     {
       id: 1,
       type: 'bot',
-      content: 'Hello! 👋 I\'m the OrbAI assistant. How can I help you learn about our AI automation solutions?',
+      content: 'Olá! 👋 Eu sou o assistente do Aton. Como posso te ajudar a entender nosso projeto de sustentabilidade?',
       timestamp: new Date()
     }
   ])
@@ -26,33 +26,33 @@ export default function Chatbot() {
   const predefinedQuestions = [
     {
       id: 1,
-      question: '🤖 How does AI automation work?',
-      answer: 'OrbAI creates custom AI solutions that analyze your business processes, identify automation opportunities, and implement intelligent workflows that reduce manual tasks and improve efficiency by up to 300%.'
+      question: '🔄 Como funciona o sistema de circularidade?',
+      answer: 'O Aton usa um sistema de banco de materiais em camadas que organiza diferentes tipos de resíduos (EPS, plásticos, madeira) em processos específicos de transformação, criando um ciclo contínuo onde resíduos se tornam recursos.'
     },
     {
       id: 2,
-      question: '📊 What results can I expect from AI automation?',
-      answer: 'Our clients typically see 95% accuracy in automated processes, save 720+ hours monthly, achieve 260% efficiency gains, and reduce operational costs by 40-60% within the first quarter.'
+      question: '📊 Qual é o impacto ambiental do projeto?',
+      answer: 'Já processamos mais de 94 toneladas de material, evitamos 260 toneladas de CO₂ e economizamos 720 MWh de energia. Nosso objetivo é alcançar neutralidade carbônica até 2030.'
     },
     {
       id: 3,
-      question: '⚡ What types of AI solutions do you offer?',
-      answer: 'We specialize in process automation, data analytics, customer service chatbots, content generation, workflow optimization, and custom AI models tailored to your specific industry needs.'
+      question: '🏭 Que tipos de materiais são processados?',
+      answer: 'Processamos principalmente EPS (isopor), plásticos diversos (PET, PP, PE, PVC), madeira e biomassa, papel. Cada material passa por um processo específico em nossa estrutura de camadas.'
     },
     {
       id: 4,
-      question: '🤝 How can I start working with OrbAI?',
-      answer: 'Contact us to schedule a free consultation where we\'ll analyze your processes and create a custom AI strategy. Email us at hello@orbai.com to discuss your automation opportunities.'
+      question: '🤝 Como posso fazer parceria com o Aton?',
+      answer: 'Oferecemos parcerias para empresas, governos e comunidades. Entre em contato conosco através do email jimmycastilho555@gmail.com para discutir oportunidades de colaboração.'
     },
     {
       id: 5,
-      question: '💡 What technology stack do you use?',
-      answer: 'We use cutting-edge AI frameworks, machine learning models, natural language processing, computer vision, and cloud infrastructure to build scalable, reliable automation solutions.'
+      question: '💡 Qual tecnologia é utilizada?',
+      answer: 'Utilizamos IoT para monitoramento inteligente, sistemas automatizados de classificação, tecnologias de processamento avançado e plataformas digitais para rastreamento de impacto em tempo real.'
     },
     {
       id: 6,
-      question: '🎯 What\'s the implementation timeline?',
-      answer: 'Typical projects range from 2-8 weeks depending on complexity. We start with a 1-week discovery phase, followed by development, testing, and seamless integration with your existing systems.'
+      question: '🎯 Quais são os próximos passos do projeto?',
+      answer: 'Estamos expandindo para novas regiões, desenvolvendo parcerias estratégicas, implementando IA avançada para otimização de processos e criando certificações de sustentabilidade.'
     }
   ]
 
