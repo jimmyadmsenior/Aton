@@ -147,35 +147,6 @@ export default function Chatbot() {
           </p>
         </motion.div>
 
-        {/* Predefined Questions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {predefinedQuestions.map((item, index) => (
-            <motion.button
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              onClick={() => handleQuestionClick(item)}
-              className="group text-left bg-gray-900/70 border border-white/20 rounded-2xl p-6 backdrop-blur-sm hover:border-white/40 hover:bg-gray-800/70 transition-all duration-300"
-            >
-              <div className="flex items-start space-x-3">
-                <HelpCircle className="w-6 h-6 text-white mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white font-medium group-hover:text-gray-200 transition-colors">
-                    {item.question}
-                  </p>
-                  <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <p className="text-sm text-gray-300 line-clamp-3">
-                      {item.answer.substring(0, 100)}...
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.button>
-          ))}
-        </div>
-
         {/* Interactive Chat Demo */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -238,6 +209,37 @@ export default function Chatbot() {
                   </motion.div>
                 ))}
               </AnimatePresence>
+              
+              {/* Suggested Questions inside Chat */}
+              {messages.length <= 1 && (
+                <div className="space-y-3 mt-6">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <HelpCircle className="w-4 h-4 text-gray-400" />
+                    <p className="text-sm text-gray-400 font-medium">Perguntas Sugeridas:</p>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2">
+                    {predefinedQuestions.map((item, index) => (
+                      <motion.button
+                        key={item.id}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        onClick={() => handleQuestionClick(item)}
+                        className="group text-left bg-gray-800/50 border border-white/10 rounded-xl p-3 hover:border-white/30 hover:bg-gray-800/70 transition-all duration-300"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs text-white">?</span>
+                          </div>
+                          <p className="text-sm text-white font-medium group-hover:text-gray-200 transition-colors line-clamp-1">
+                            {item.question}
+                          </p>
+                        </div>
+                      </motion.button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Chat Input */}
@@ -261,7 +263,7 @@ export default function Chatbot() {
                 </motion.button>
               </div>
               <p className="text-xs text-gray-400 mt-2">
-                💡 Clique nas perguntas sugeridas acima para respostas detalhadas
+                💡 Use as perguntas sugeridas acima ou digite sua própria pergunta
               </p>
             </div>
           </div>
