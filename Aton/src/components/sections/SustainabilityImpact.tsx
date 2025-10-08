@@ -19,45 +19,44 @@ export default function SustainabilityImpact() {
   ]
 
   const materialDistribution = [
-    { name: 'Plásticos', value: 40, color: '#6B7280' },
-    { name: 'EPS/Isopor', value: 25, color: '#4B5563' },
-    { name: 'Madeira', value: 20, color: '#374151' },
-    { name: 'Papel', value: 10, color: '#9CA3AF' },
-    { name: 'Outros', value: 5, color: '#D1D5DB' }
+    { name: 'Espuma dos Bancos', value: 45, color: '#6B7280' },
+    { name: 'Tecidos/Couros', value: 30, color: '#4B5563' },
+    { name: 'Estrutura Metálica', value: 20, color: '#374151' },
+    { name: 'Componentes Plásticos', value: 5, color: '#9CA3AF' }
   ]
 
   const impactMetrics = [
     {
-      title: 'Material Reciclado',
-      value: '94 ton',
-      growth: '+28%',
+      title: 'Bancos Reaproveitados',
+      value: '2.847',
+      growth: '+85%',
       icon: Bot,
       color: 'from-gray-600 to-gray-800',
-      description: 'Toneladas processadas este mês'
+      description: 'Bancos processados mensalmente'
     },
     {
-      title: 'CO₂ Evitado',
-      value: '260 ton',
-      growth: '+35%',
+      title: 'Redução de Desperdício',
+      value: '90%',
+      growth: '+25%',
       icon: Zap,
       color: 'from-gray-700 to-gray-900',
-      description: 'Emissões evitadas'
+      description: 'Menos descarte em aterros'
     },
     {
-      title: 'Energia Poupada',
-      value: '720 MWh',
-      growth: '+42%',
+      title: 'Economia Toyota',
+      value: 'R$ 1.2M',
+      growth: '+60%',
       icon: Target,
       color: 'from-gray-600 to-gray-800',
-      description: 'Energia economizada'
+      description: 'Economia anual estimada'
     },
     {
-      title: 'Comunidades Impactadas',
-      value: '15',
-      growth: '+50%',
+      title: 'Pegada de Carbono',
+      value: '-75%',
+      growth: '+40%',
       icon: Users,
       color: 'from-gray-500 to-gray-700',
-      description: 'Parceiros ativos'
+      description: 'Redução vs. produção nova'
     }
   ]
 
@@ -86,16 +85,16 @@ export default function SustainabilityImpact() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gray-900">
-              Transformação
+              Impacto Comprovado
             </span>
             <br />
             <span className="text-black">
-              Sustentável Comprovada
+              para a Toyota
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Acompanhe em tempo real como o Aton está criando impacto positivo no meio ambiente 
-            e na sociedade através de métricas transparentes e verificáveis.
+            Resultados mensuráveis do nosso sistema de reaproveitamento de bancos, 
+            gerando economia real e impacto ambiental positivo para a Toyota.
           </p>
         </motion.div>
 

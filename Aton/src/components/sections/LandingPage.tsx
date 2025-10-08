@@ -44,7 +44,7 @@ export default function LandingPage() {
             >
               <Leaf className="w-4 h-4 text-gray-600" />
               <span className="text-gray-600 text-sm font-medium uppercase tracking-wide">
-                SUSTENTABILIDADE E INOVAÇÃO
+                DESAFIO TOYOTA • IDEIAS ON
               </span>
             </motion.div>
 
@@ -65,7 +65,7 @@ export default function LandingPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
             >
-              Transformando resíduos em recursos através da economia circular
+              Revolucionando o reaproveitamento de bancos automotivos através da economia circular
             </motion.p>
 
             {/* CTA Buttons */}

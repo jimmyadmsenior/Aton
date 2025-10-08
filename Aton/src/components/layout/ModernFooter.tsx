@@ -55,8 +55,8 @@ export default function ModernFooter() {
               </span>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Soluções sustentáveis de economia circular, construídas para os inovadores de amanhã. 
-              Transformando resíduos em recursos através de tecnologia inteligente.
+              Revolucionando o reaproveitamento de bancos automotivos para a Toyota. 
+              Nossa proposta transforma desperdício em oportunidade através da economia circular.
             </p>
             
             {/* Social links */}
