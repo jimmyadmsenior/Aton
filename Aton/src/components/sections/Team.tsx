@@ -16,7 +16,7 @@ const TeamAvatar = ({ member }: { member: any }) => {
       {!imageError ? (
         <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-green-400/20">
           <Image
-            src={`/images${member.image}`}
+            src={member.image}
             alt={member.name}
             width={96}
             height={96}
@@ -38,12 +38,12 @@ export default function Team() {
   const teamMembers = [
     {
       name: 'Jimmy Castilho',
-      role: 'Founder & CEO',
-      expertise: 'Sustentabilidade e Inovação',
-      image: '/team/jimmy.jpg', // Placeholder - adicionar imagem real
-      bio: 'Especialista em economia circular com mais de 10 anos de experiência em projetos de sustentabilidade.',
-      linkedin: '#',
-      github: '#',
+      role: 'Programmer & Developer',
+      expertise: 'Programação e Desenvolvimento',
+      image: '/images/team/Jimmy.png',
+      bio: 'Especialista em desenvolvimento de software e soluções sustentáveis. Apaixonado por criar tecnologias que impactam positivamente o meio ambiente.',
+      linkedin: 'https://www.linkedin.com/in/jimmy-castilho-003733270/',
+      github: 'https://github.com/jimmyadmsenior/Aton',
       email: 'jimmycastilho555@gmail.com'
     },
     {
@@ -67,14 +67,14 @@ export default function Team() {
       email: 'carlos@aton.com'
     },
     {
-      name: 'Marina Costa',
+      name: 'Duda',
       role: 'Head of Partnerships',
-      expertise: 'Parcerias Estratégicas',
-      image: '/team/marina.jpg', // Placeholder - adicionar imagem real
-      bio: 'Especialista em desenvolvimento de parcerias corporativas e governamentais.',
+      expertise: 'Parcerias Estratégicas e Sustentabilidade',
+      image: '/images/team/Duda.jpeg',
+      bio: 'Especialista em desenvolvimento de parcerias estratégicas e projetos de impacto socioambiental.',
       linkedin: '#',
       github: '#',
-      email: 'marina@aton.com'
+      email: 'duda@aton.com'
     }
   ]
 
