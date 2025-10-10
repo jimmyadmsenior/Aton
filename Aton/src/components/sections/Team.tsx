@@ -43,7 +43,7 @@ export default function Team() {
       role: 'Programmer & Developer',
       expertise: 'Programação e Desenvolvimento',
       image: '/images/team/Jimmy.png',
-      bio: 'Especialista em desenvolvimento de software e soluções tecnológicas. Apaixonado por criar sistemas que impactam positivamente o meio ambiente.',
+      bio: 'Especialista em desenvolvimento de software e soluções tecnológicas. Possui ampla experiência em programação full-stack, desenvolvimento de APIs e integração de sistemas. Apaixonado por criar sistemas que impactam positivamente o meio ambiente, com foco em sustentabilidade e inovação tecnológica para economia circular.',
       linkedin: 'https://www.linkedin.com/in/jimmy-castilho-003733270/',
       github: 'https://github.com/jimmyadmsenior/Aton',
       email: 'jimmycastilho555@gmail.com'
@@ -53,9 +53,9 @@ export default function Team() {
       role: 'Product Designer',
       expertise: 'Tecnologia e Desenvolvimento',
       image: '/images/team/Isadora.jpg', // Placeholder - adicionar imagem real
-      bio: 'Engenheira de software especializada em IoT e sistemas de monitoramento ambiental.',
+  bio: 'Engenheira de software especializada em IoT e sistemas de monitoramento ambiental. Atua no desenvolvimento de interfaces intuitivas e acessíveis, com experiência em design centrado no usuário e integração de tecnologias para sustentabilidade. Apaixonada por criar soluções que unem tecnologia e impacto ambiental positivo.',
       linkedin: '#',
-      github: '#',
+      github: 'https://github.com/isahtxx',
       email: 'ana@aton.com'
     },
     {
@@ -63,9 +63,9 @@ export default function Team() {
       role: 'Product Owner',
       expertise: 'Operações e Logística',
       image: '/images/team/Lívia.jpg', // Placeholder - adicionar imagem real
-      bio: 'Especialista em processos industriais e otimização de sistemas de reciclagem.',
+  bio: 'Especialista em processos industriais e otimização de sistemas de reciclagem. Possui experiência em gestão de operações logísticas, implementação de processos sustentáveis e análise de eficiência produtiva. Focada em resultados e na melhoria contínua de sistemas para maximizar o reaproveitamento de materiais e reduzir impactos ambientais.',
       linkedin: '#',
-      github: '#',
+      github: 'https://github.com/liviaclemente',
       email: 'carlos@aton.com'
     },
     {
@@ -73,9 +73,9 @@ export default function Team() {
       role: 'Head of Partnerships',
       expertise: 'Parcerias Estratégicas e Sustentabilidade',
       image: '/images/team/Duda.jpeg',
-      bio: 'Especialista em desenvolvimento de parcerias estratégicas e projetos de impacto socioambiental.',
+      bio: 'Especialista em desenvolvimento de parcerias estratégicas e projetos de impacto socioambiental. Atua na articulação de relacionamentos corporativos, negociação de contratos e desenvolvimento de iniciativas sustentáveis. Focada em construir conexões que promovam crescimento mútuo e gerem valor para todas as partes envolvidas no ecossistema de sustentabilidade.',
       linkedin: '#',
-      github: '#',
+      github: 'https://github.com/frachine-maria',
       email: 'duda@aton.com'
     }
   ]
@@ -123,7 +123,7 @@ export default function Team() {
         </motion.div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 min-h-[340px]">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -137,15 +137,15 @@ export default function Team() {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer h-full"
             >
-              <div className="relative bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 overflow-hidden">
+              <div className="relative bg-white border border-gray-200 rounded-3xl p-5 hover:shadow-lg transition-all duration-500 overflow-hidden h-full flex flex-col justify-between min-h-[340px]">
                 
                 {/* Subtle hover overlay */}
                 <div className="absolute inset-0 bg-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Content */}
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                 
                 {/* Avatar */}
                 <TeamAvatar member={member} />
@@ -160,12 +160,12 @@ export default function Team() {
                 </div>
 
                 {/* Bio */}
-                <p className="text-gray-600 text-sm text-center mb-6 leading-relaxed">
+                <p className="text-gray-600 text-sm text-center mb-6 leading-relaxed flex-1">
                   {member.bio}
                 </p>
 
                 {/* Social Links */}
-                <div className="flex justify-center space-x-2">
+                <div className="flex justify-center space-x-2 mt-auto">
                   <motion.a
                     href={member.linkedin}
                     whileHover={{ scale: 1.1, y: -2 }}
@@ -186,7 +186,7 @@ export default function Team() {
                     href={`mailto:${member.email}`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-9 h-9 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:text-gray-900 transition-all duration-300"
+                    className="w-9 h-9 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:text-red-500 transition-all duration-300"
                   >
                     <Mail className="w-4 h-4" />
                   </motion.a>

@@ -109,7 +109,7 @@ export default function ModernFooter() {
           className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center"
         >
           <p className="text-gray-600 text-sm">
-            © 2024 ATON. Todos os direitos reservados.
+            © 2025 ATON. Todos os direitos reservados.
           </p>
           <div className="flex items-center space-x-6 mt-4 sm:mt-0">
             <Link href="#" className="text-gray-600 hover:text-black text-sm transition-colors">
