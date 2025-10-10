@@ -111,14 +111,85 @@ export default function HowItWorks() {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Visualização 3D: Banco Desconstruído
+              Visualização 3D: Banco por Dentro
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore o modelo 3D interativo que mostra como um banco automotivo 
-              é desmontado para reaproveitamento de componentes.
+              Explore o modelo 3D interativo que mostra as camadas de materiais
+              do nosso banco automotivo.
             </p>
           </motion.div>
-          <Model3D />
+          <Model3D modelPath="/media/car-seat-deconstructed/source/model.glb" />
+        </div>
+
+        {/* Modelo 3D do Banco Pronto */}
+        <div className="mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Design Automotivo: Banco Finalizado
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Veja como fica o resultado final - um banco automotivo completo e renovado 
+              através do processo de reaproveitamento sustentável.
+            </p>
+          </motion.div>
+          <Model3D modelPath="/media/automotive-seat-design/source/model.glb" />
+        </div>
+
+        {/* Modelos 3D dos Carros Toyota */}
+        <div className="mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Veículos da Toyota: Aplicação Prática
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore os modelos dos veículos onde nossos bancos reaproveitados 
+              serão implementados na cadeia produtiva Toyota.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Honda Civic Type R 2023
+              </h4>
+              <Model3D 
+                modelPath="/media/2023-honda-civic-type-r/2023_honda_civic_type_r.glb" 
+                height="h-80"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Toyota Corolla 2020
+              </h4>
+              <Model3D 
+                modelPath="/media/toyota-corolla-2020/source/model.glb" 
+                height="h-80"
+              />
+            </motion.div>
+          </div>
         </div>
 
         <div className="mb-24">
