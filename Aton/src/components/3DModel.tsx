@@ -3,7 +3,21 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-export default function Model3D() {
+interface Model3DProps {
+  modelPath: string
+  title?: string
+  description?: string
+  autoRotate?: boolean
+  height?: string
+}
+
+export default function Model3D({ 
+  modelPath, 
+  title, 
+  description, 
+  autoRotate = true,
+  height = "h-96" 
+}: Model3DProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -13,8 +27,8 @@ export default function Model3D() {
     const loadThreeJS = async () => {
       try {
         const THREE = await import('three')
-        const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader')
-        const { OrbitControls } = await import('three/examples/jsm/controls/OrbitControls')
+        const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js')
+        const { OrbitControls } = await import('three/addons/controls/OrbitControls.js')
 
         if (!containerRef.current) return
 
@@ -50,14 +64,14 @@ export default function Model3D() {
         const controls = new OrbitControls(camera, renderer.domElement)
         controls.enableDamping = true
         controls.dampingFactor = 0.05
-        controls.autoRotate = true
+        controls.autoRotate = autoRotate
         controls.autoRotateSpeed = 1
 
         // Load 3D model
         const loader = new GLTFLoader()
         loader.load(
-          '/media/car-seat-deconstructed/source/model.glb',
-          (gltf) => {
+          modelPath,
+          (gltf: any) => {
             const model = gltf.scene
             
             // Center and scale the model
@@ -73,11 +87,11 @@ export default function Model3D() {
             scene.add(model)
             setIsLoading(false)
           },
-          (progress) => {
+          (progress: any) => {
             // Loading progress
             console.log('Loading progress:', (progress.loaded / progress.total) * 100 + '%')
           },
-          (error) => {
+          (error: any) => {
             console.error('Error loading 3D model:', error)
             setError('Erro ao carregar modelo 3D')
             setIsLoading(false)
@@ -129,7 +143,7 @@ export default function Model3D() {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative w-full h-96 bg-gray-100 rounded-2xl overflow-hidden shadow-lg"
+      className={`relative w-full ${height} bg-gray-100 rounded-2xl overflow-hidden shadow-lg`}
     >
       <div ref={containerRef} className="w-full h-full">
         {isLoading && (
