@@ -1,4 +1,4 @@
-![Capa do Projeto Aton](./Aton/public/images/Capa_Readme.png)
+![Capa do Projeto Aton](Aton/public/images/Capa_Readme.png)
 
 # Aton - Proposta de Reaproveitamento de Bancos Automotivos Toyota
 
