@@ -26,9 +26,7 @@ export default function ModernFooter() {
   }
 
   const socialLinks = [
-    { name: 'GitHub', href: '#', icon: Github },
-    { name: 'LinkedIn', href: '#', icon: Linkedin },
-    { name: 'Twitter', href: '#', icon: Twitter }
+    { name: 'GitHub', href: 'https://github.com/jimmyadmsenior/Aton', icon: Github }
   ]
 
   return (

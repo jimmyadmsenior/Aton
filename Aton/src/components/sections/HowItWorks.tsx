@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Bot, Brain, Zap, BarChart3, ArrowRight, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
+import Model3D from '../3DModel'
 
 export default function HowItWorks() {
   const [activeStep, setActiveStep] = useState(0)
@@ -99,6 +100,26 @@ export default function HowItWorks() {
             e reaproveitamento de bancos automotivos na cadeia produtiva Toyota.
           </p>
         </motion.div>
+
+        {/* Modelo 3D do Banco Desconstruído */}
+        <div className="mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Visualização 3D: Banco Desconstruído
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore o modelo 3D interativo que mostra como um banco automotivo 
+              é desmontado para reaproveitamento de componentes.
+            </p>
+          </motion.div>
+          <Model3D />
+        </div>
 
         <div className="mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
