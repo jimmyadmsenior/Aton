@@ -1,53 +1,53 @@
-# Aton - Plataforma de Sustentabilidade e Mobilidade
+![Capa do Projeto Aton](./Aton/public/images/Capa_Readme.png)
 
-Aton é uma plataforma full-stack que transforma resíduos em mobilidade sustentável. Pessoas e empresas entregam materiais recicláveis em pontos de coleta, ganham pontos e trocam por benefícios de mobilidade como patinetes, vouchers e descontos.
+# Aton - Proposta de Reaproveitamento de Bancos Automotivos Toyota
+
+Aton apresenta uma solução inovadora de economia circular para a Toyota, focada no reaproveitamento inteligente de bancos automotivos. Nossa proposta revoluciona o processo de desmontagem, processamento e reutilização de componentes de bancos, transformando desperdício em oportunidade sustentável.
 
 ## 🚀 Tecnologias
 
 - **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
 - **Animações**: Framer Motion
-- **Mapas**: Leaflet + React Leaflet
-- **Backend**: Next.js API Routes
-- **Banco de Dados**: PostgreSQL + Prisma ORM
-- **Autenticação**: NextAuth.js (planejado)
-- **Upload de Arquivos**: Supabase Storage (configurável)
-- **Estado Global**: React Query
+- **Visualização 3D**: Three.js + React Three Fiber
+- **Modelos 3D**: GLB/GLTF format
+- **Styling**: Tailwind CSS + CSS personalizado
+- **Componentes**: React components otimizados
+- **Deploy**: Vercel (Next.js nativo)
 
 ## 📋 Funcionalidades
 
-### MVP (Versão Atual)
-- [x] Sistema de pontos de coleta com mapa interativo
-- [x] Cadastro e gestão de materiais recicláveis
-- [x] Sistema de pontuação por tipo de material
-- [x] API REST completa
-- [x] Interface responsiva
-- [ ] Sistema de autenticação
-- [ ] Submissão de resíduos com upload de fotos
-- [ ] Sistema de aprovação para empresas
-- [ ] Carteira de pontos do usuário
-- [ ] Loja de recompensas
+### ✅ Versão Atual - Proposta Toyota
+- [x] **Landing Page Completa**: Apresentação da proposta de reaproveitamento
+- [x] **Seção "Sobre o Projeto"**: Problemas identificados e soluções propostas
+- [x] **"Como Funciona"**: Sistema em 3 camadas (Desmontagem → Processamento → Compartilhamento)
+- [x] **Visualização 3D Interativa**: 4 modelos 3D implementados
+  - Banco automotivo desconstruído (componentes internos)
+  - Banco finalizado (resultado do reaproveitamento)
+  - Honda Civic Type R 2023 (aplicação prática)
+  - Toyota Corolla 2020 (implementação real)
+- [x] **Métricas de Impacto**: 2.340 kg de materiais processados, 90% de circularidade
+- [x] **Chatbot Inteligente**: Perguntas e respostas sobre sustentabilidade e o projeto
+- [x] **Design Responsivo**: Interface otimizada para todos os dispositivos
+- [x] **Animações Avançadas**: Framer Motion para experiência premium
 
-### Funcionalidades Planejadas
-- [ ] Autenticação com roles (INDIVIDUAL/COMPANY/ADMIN)
-- [ ] Dashboard administrativo
-- [ ] Notificações em tempo real
-- [ ] Métricas de impacto ambiental
-- [ ] Sistema de certificação para empresas
-- [ ] Integração com APIs de mobilidade
+### 🎯 Proposta de Valor
+- **Redução de Desperdício**: Aproveitamento de 85-90% dos componentes de bancos
+- **Economia Circular**: Reintegração de materiais na cadeia produtiva Toyota
+- **Sustentabilidade**: Redução significativa da pegada de carbono
+- **Inovação**: Processo sistemático de desmontagem e reprocessamento
 
 ## 🛠️ Configuração Local
 
 ### Pré-requisitos
 - Node.js 18+ 
-- PostgreSQL 14+
 - npm ou yarn
 
 ### Instalação
 
 1. **Clone o repositório**
 ```bash
-git clone <url-do-repositorio>
-cd aton
+git clone https://github.com/jimmyadmsenior/Aton.git
+cd Aton/Aton
 ```
 
 2. **Instale as dependências**
@@ -55,40 +55,35 @@ cd aton
 npm install
 ```
 
-3. **Configure o banco de dados**
-
-Crie um banco PostgreSQL e configure a URL no arquivo `.env.local`:
-
+3. **Instale dependências específicas do projeto**
 ```bash
-# Copie o arquivo de exemplo
-cp .env.example .env.local
+# Three.js para visualização 3D
+npm install three @types/three
+
+# Outras dependências já incluídas:
+# - Next.js 14
+# - TypeScript
+# - Tailwind CSS
+# - Framer Motion
 ```
 
-Edite `.env.local` e configure:
-```env
-DATABASE_URL="postgresql://usuario:senha@localhost:5432/aton_db"
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="sua-chave-secreta-aqui"
-```
-
-4. **Execute as migrações do Prisma**
-```bash
-# Gerar cliente Prisma
-npx prisma generate
-
-# Executar migrações (cria as tabelas)
-npx prisma migrate dev --name init
-
-# Popular com dados de exemplo
-npm run db:seed
-```
-
-5. **Execute o projeto**
+4. **Execute o projeto**
 ```bash
 npm run dev
 ```
 
 A aplicação estará disponível em `http://localhost:3000`
+
+### Estrutura dos Modelos 3D
+
+Os modelos 3D devem estar localizados em:
+```
+public/media/
+├── car-seat-deconstructed/source/model.glb
+├── automotive-seat-design/source/model.glb
+├── 2023-honda-civic-type-r/2023_honda_civic_type_r.glb
+└── toyota-corolla-2020/source/model.glb
+```
 
 ### Comandos Úteis
 
@@ -112,79 +107,76 @@ npm run db:reset     # Reset completo do banco
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── api/               # API Routes
-│   │   ├── collection-points/
-│   │   ├── waste-submissions/
-│   │   └── ...
-│   ├── map/               # Página do mapa
+│   ├── globals.css        # Estilos globais (scrollbars customizadas)
 │   ├── layout.tsx         # Layout global
-│   └── page.tsx           # Página inicial
+│   └── page.tsx           # Landing page principal
 ├── components/            # Componentes React
-│   ├── layout/           # Header, Footer
-│   ├── sections/         # Seções da landing page
-│   └── ...
-└── lib/                  # Utilitários e configurações
+│   ├── 3DModel.tsx        # Componente de visualização 3D
+│   ├── providers.tsx      # Providers do React
+│   ├── layout/           # Componentes de layout
+│   │   ├── ModernHeader.tsx
+│   │   └── ModernFooter.tsx
+│   └── sections/         # Seções da landing page
+│       ├── LandingPage.tsx      # Hero section
+│       ├── AboutProject.tsx     # Sobre o projeto
+│       ├── HowItWorks.tsx       # Como funciona + Modelos 3D
+│       ├── SustainabilityImpact.tsx  # Métricas de impacto
+│       ├── Team.tsx             # Equipe
+│       └── Chatbot.tsx          # Chatbot interativo
 
-prisma/
-├── schema.prisma         # Schema do banco
-└── seed.ts              # Dados de exemplo
-
-public/                  # Arquivos estáticos
+public/
+├── media/                 # Modelos 3D e assets
+│   ├── car-seat-deconstructed/
+│   ├── automotive-seat-design/
+│   ├── 2023-honda-civic-type-r/
+│   └── toyota-corolla-2020/
+├── images/               # Imagens estáticas
+└── videos/              # Vídeos (se houver)
 ```
 
-## 📊 Modelos de Dados
+## 🏗️ Processo de Reaproveitamento - 3 Camadas
 
-### Principais Entidades
+### 1ª Camada: Desmontagem Inteligente
+- **Processo**: Separação sistemática de componentes dos bancos
+- **Output**: Peças classificadas (espuma, tecido, estrutura metálica)
+- **Impacto**: 100% de aproveitamento dos materiais
 
-- **User**: Usuários (INDIVIDUAL/COMPANY/ADMIN)
-- **Company**: Empresas parceiras e oficinas
-- **CollectionPoint**: Pontos de coleta espalhados pela cidade
-- **WasteSubmission**: Submissões de materiais pelos usuários
-- **Reward**: Recompensas disponíveis na loja
-- **Transaction**: Histórico de ganho/gasto de pontos
+### 2ª Camada: Processamento Específico
+- **Processo**: Limpeza e reprocessamento por tipo de material
+- **Output**: Componentes renovados e prontos para reutilização
+- **Impacto**: 85% de recuperação dos materiais originais
 
-### Sistema de Pontuação
+### 3ª Camada: Compartilhamento
+- **Processo**: Redistribuição na cadeia produtiva Toyota
+- **Output**: Novos bancos sustentáveis e peças de reposição
+- **Impacto**: 90% de circularidade alcançada
 
-```typescript
-// Regras de cálculo de pontos
-Plástico/Metal: 10 pontos por kg
-Baterias/Pneus: 20 pontos por kg (multiplicador x2)
-Eletrônicos: 15 pontos por kg (multiplicador x1.5)
-```
+## � Métricas de Impacto
 
-## 🔌 API Endpoints
+### Resultados Projetados
+- **2.340 kg** de materiais processados
+- **90%** de taxa de circularidade
+- **85%** de recuperação de componentes
+- **Redução significativa** da pegada de carbono
 
-### Pontos de Coleta
-```
-GET /api/collection-points
-POST /api/collection-points (ADMIN only)
-```
+### Distribuição de Materiais
+- **45%** Espuma (1.053 kg)
+- **30%** Tecidos (702 kg)
+- **25%** Estrutura metálica (585 kg)
 
-### Submissões
-```
-GET /api/waste-submissions
-POST /api/waste-submissions
-POST /api/waste-submissions/:id/approve
-```
+## 🤖 Chatbot Inteligente
 
-### Exemplo de Uso
-```javascript
-// Buscar pontos próximos
-const response = await fetch('/api/collection-points?lat=-23.2020&lng=-47.2820&radius=5')
+### Perguntas Sugeridas Implementadas
+1. "Como funciona o processo de reaproveitamento?"
+2. "Quais são os benefícios ambientais?"
+3. "Quanto material pode ser reaproveitado?"
+4. "Como a Toyota se beneficia dessa solução?"
+5. "Qual o impacto na redução de resíduos?"
 
-// Criar submissão
-const submission = await fetch('/api/waste-submissions', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    userId: 'user-id',
-    pointId: 'point-id', 
-    materialType: 'PLASTIC',
-    weightKg: 2.5,
-    images: ['url1', 'url2']
-  })
-})
-```
+### Respostas Personalizadas
+- Sistema de keyword matching
+- Respostas contextualizes sobre sustentabilidade
+- Interface moderna com design escuro/branco
 
 ## 🌍 Deploy
 
@@ -211,34 +203,33 @@ npx prisma migrate deploy
 npm run db:seed
 ```
 
-### Variáveis de Ambiente Necessárias
-```env
-DATABASE_URL=
-NEXTAUTH_URL=
-NEXTAUTH_SECRET=
-SUPABASE_URL= (opcional)
-SUPABASE_ANON_KEY= (opcional)
-```
+### Variáveis de Ambiente (Não necessárias para esta versão)
+Esta versão é uma apresentação estática focada em demonstrar a proposta. Não requer configuração de banco de dados ou autenticação.
 
-## 📝 Dados de Teste
+## 🎨 Customizações Visuais
 
-Após executar o seed, você terá:
+### Seções Temáticas dos Modelos 3D
 
-### Usuários de Teste
-- **Admin**: `admin@aton.com.br` / `admin123`
-- **Empresa**: `gestor@toyota-salto.com.br` / `company123`
-- **Individual**: `joao@email.com` / `user123`
+#### 🔧 Banco Desconstruído
+- **Design**: Tons quentes (vermelho/laranja/amarelo)
+- **Tema**: Processo de desmontagem
+- **Elementos**: Círculos flutuantes, glow sutil, badge temático
 
-### Pontos de Coleta
-- 6 pontos espalhados por Salto/SP
-- Diferentes tipos de materiais aceitos
-- Horários de funcionamento variados
+#### ✨ Banco Finalizado  
+- **Design**: Tons verdes (sustentabilidade)
+- **Tema**: Resultado final renovado
+- **Elementos**: Gradientes verdes, visual de "completude"
 
-### Recompensas
-- Patinete elétrico (100 pontos)
-- Desconto manutenção (200 pontos)  
-- Doação ONG (50 pontos)
-- Voucher combustível (300 pontos)
+#### 🚗 Carros Toyota
+- **Design**: Tema automotivo premium (tons escuros)
+- **Honda Civic**: Gradiente vermelho/laranja (racing theme)
+- **Toyota Corolla**: Gradiente azul/índigo (official theme)
+- **Elementos**: Cards individuais, efeitos hover, pontos luminosos
+
+### Scrollbars Customizadas
+- **Seções claras**: Scrollbar em tons cinza
+- **Chatbot**: Scrollbar escura para combinar com o tema
+- **Responsive**: Adaptável a diferentes navegadores
 
 ## 🤝 Como Contribuir
 
@@ -248,16 +239,32 @@ Após executar o seed, você terá:
 4. Push para a branch (`git push origin feature/nova-feature`)
 5. Abra um Pull Request
 
-## 📞 Suporte
+## 🎯 Próximos Passos
 
-Para dúvidas e suporte:
-- Email: jimmycastilho555@gmail.com
-- Issues: [GitHub Issues](link-do-repo/issues)
+### Implementação na Toyota
+1. **Fase Piloto**: Teste em uma unidade específica
+2. **Validação de Processo**: Ajustes baseados em dados reais
+3. **Escalonamento**: Expansão para outras unidades Toyota
+4. **Integração Total**: Incorporação na cadeia produtiva completa
+
+### Possíveis Expansões
+- **Outros Componentes**: Aplicação em painéis, para-choques, etc.
+- **Outras Montadoras**: Extensão do conceito para parceiros
+- **Métricas Avançadas**: Dashboard de impacto ambiental em tempo real
+- **Certificação**: Sistema de certificação de sustentabilidade
+
+## 📞 Contato
+
+Para mais informações sobre a proposta:
+- **Email**: jimmycastilho555@gmail.com
+- **Telefone**: +55 (11) 94166-5545
+- **Localização**: São Paulo, SP
+- **GitHub**: [jimmyadmsenior/Aton](https://github.com/jimmyadmsenior/Aton)
 
 ## 📄 Licença
 
-Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto representa uma proposta de negócio para a Toyota e pode ser usado como base para implementação real de soluções de economia circular na indústria automotiva.
 
 ---
 
-**Aton** - Transformando resíduos em mobilidade sustentável 🌱🚴‍♂️
+**Aton** - Revolucionando o reaproveitamento de bancos automotivos através da economia circular 🚗♻️🌱
