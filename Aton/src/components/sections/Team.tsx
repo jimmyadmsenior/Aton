@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Users, Linkedin, Github, Mail, Award, Target, Heart } from 'lucide-react'
+import { Users, Linkedin, Github, Mail, Award, Target, Heart, Eye } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import Model3D from '../3DModel'
 
 // Componente de Avatar com fallback
 const TeamAvatar = ({ member }: { member: any }) => {
@@ -42,7 +43,7 @@ export default function Team() {
       name: 'Jimmy Castilho',
       role: 'Programmer & Developer',
       expertise: 'Programação e Desenvolvimento',
-      image: '/images/team/Jimmy.png',
+      image: '/images/Jimmy.png',
       bio: 'Especialista em desenvolvimento de software e soluções tecnológicas. Possui ampla experiência em programação full-stack, desenvolvimento de APIs e integração de sistemas. Apaixonado por criar sistemas que impactam positivamente o meio ambiente, com foco em sustentabilidade e inovação tecnológica para economia circular.',
       linkedin: 'https://www.linkedin.com/in/jimmy-castilho-003733270/',
       github: 'https://github.com/jimmyadmsenior/Aton',
@@ -52,31 +53,31 @@ export default function Team() {
       name: 'Isadora Moreira',
       role: 'Product Designer',
       expertise: 'Tecnologia e Desenvolvimento',
-      image: '/images/team/Isadora.jpg', // Placeholder - adicionar imagem real
-  bio: 'Engenheira de software especializada em IoT e sistemas de monitoramento ambiental. Atua no desenvolvimento de interfaces intuitivas e acessíveis, com experiência em design centrado no usuário e integração de tecnologias para sustentabilidade. Apaixonada por criar soluções que unem tecnologia e impacto ambiental positivo.',
+      image: '/images/Isadora.jpg',
+      bio: 'Engenheira de software especializada em IoT e sistemas de monitoramento ambiental. Atua no desenvolvimento de interfaces intuitivas e acessíveis, com experiência em design centrado no usuário e integração de tecnologias para sustentabilidade. Apaixonada por criar soluções que unem tecnologia e impacto ambiental positivo.',
       linkedin: '#',
       github: 'https://github.com/isahtxx',
-      email: 'ana@aton.com'
+      email: 'isadora@aton.com'
     },
     {
       name: 'Lívia Clemente',
       role: 'Product Owner',
       expertise: 'Operações e Logística',
-      image: '/images/team/Lívia.jpg', // Placeholder - adicionar imagem real
-  bio: 'Especialista em processos industriais e otimização de sistemas de reciclagem. Possui experiência em gestão de operações logísticas, implementação de processos sustentáveis e análise de eficiência produtiva. Focada em resultados e na melhoria contínua de sistemas para maximizar o reaproveitamento de materiais e reduzir impactos ambientais.',
+      image: '/images/Lívia.jpg',
+      bio: 'Especialista em processos industriais e otimização de sistemas de reciclagem. Possui experiência em gestão de operações logísticas, implementação de processos sustentáveis e análise de eficiência produtiva. Focada em resultados e na melhoria contínua de sistemas para maximizar o reaproveitamento de materiais e reduzir impactos ambientais.',
       linkedin: '#',
       github: 'https://github.com/liviaclemente',
-      email: 'carlos@aton.com'
+      email: 'livia@aton.com'
     },
     {
-      name: 'Duda',
+      name: 'Maria Eduarda',
       role: 'Head of Partnerships',
       expertise: 'Parcerias Estratégicas e Sustentabilidade',
-      image: '/images/team/Duda.jpeg',
+      image: '/images/Maria Eduarda.jpeg',
       bio: 'Especialista em desenvolvimento de parcerias estratégicas e projetos de impacto socioambiental. Atua na articulação de relacionamentos corporativos, negociação de contratos e desenvolvimento de iniciativas sustentáveis. Focada em construir conexões que promovam crescimento mútuo e gerem valor para todas as partes envolvidas no ecossistema de sustentabilidade.',
       linkedin: '#',
       github: 'https://github.com/frachine-maria',
-      email: 'duda@aton.com'
+      email: 'maria@aton.com'
     }
   ]
 
@@ -250,6 +251,80 @@ export default function Team() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </motion.div>
+
+        {/* 3D Models Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-2 mb-6"
+            >
+              <Eye className="w-4 h-4 text-gray-600" />
+              <span className="text-gray-600 text-sm font-medium uppercase tracking-wide">MODELOS 3D</span>
+            </motion.div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Visualize Nossa Solução</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore os modelos 3D do banco automotivo: desde a estrutura interna até o produto finalizado
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Banco Desconstruído */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white border border-gray-200 rounded-3xl p-6"
+            >
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Banco Desconstruído</h4>
+                <p className="text-gray-600 text-sm">
+                  Visualização interna da estrutura e componentes do banco automotivo
+                </p>
+              </div>
+              <div className="relative">
+                <Model3D 
+                  modelPath="/media/car-seat-deconstructed/source/model.glb"
+                  height="h-80"
+                  autoRotate={true}
+                />
+              </div>
+            </motion.div>
+
+            {/* Banco Finalizado */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white border border-gray-200 rounded-3xl p-6"
+            >
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Banco Finalizado</h4>
+                <p className="text-gray-600 text-sm">
+                  Produto final com design sustentável e acabamento premium
+                </p>
+              </div>
+              <div className="relative">
+                <Model3D 
+                  modelPath="/media/car-seat-design/source/model.glb"
+                  height="h-80"
+                  autoRotate={true}
+                />
+              </div>
+            </motion.div>
           </div>
         </motion.div>
 

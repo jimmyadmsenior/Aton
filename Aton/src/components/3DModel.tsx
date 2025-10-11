@@ -69,9 +69,12 @@ export default function Model3D({
 
         // Load 3D model
         const loader = new GLTFLoader()
+        console.log('Attempting to load model:', modelPath)
+        
         loader.load(
           modelPath,
           (gltf: any) => {
+            console.log('Model loaded successfully:', gltf)
             const model = gltf.scene
             
             // Center and scale the model
@@ -80,20 +83,24 @@ export default function Model3D({
             const size = box.getSize(new THREE.Vector3())
             
             const maxDim = Math.max(size.x, size.y, size.z)
-            const scale = 2 / maxDim
+            const scale = maxDim > 0 ? 2 / maxDim : 1
             model.scale.setScalar(scale)
             model.position.sub(center.multiplyScalar(scale))
             
+            // Add to scene
             scene.add(model)
             setIsLoading(false)
+            console.log('Model added to scene successfully')
           },
           (progress: any) => {
             // Loading progress
-            console.log('Loading progress:', (progress.loaded / progress.total) * 100 + '%')
+            const percent = progress.total > 0 ? (progress.loaded / progress.total) * 100 : 0
+            console.log('Loading progress:', percent + '%')
           },
           (error: any) => {
             console.error('Error loading 3D model:', error)
-            setError('Erro ao carregar modelo 3D')
+            console.error('Model path:', modelPath)
+            setError(`Erro ao carregar modelo 3D: ${error.message || 'Arquivo não encontrado'}`)
             setIsLoading(false)
           }
         )
@@ -156,8 +163,10 @@ export default function Model3D({
         )}
         {error && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-            <div className="text-center text-red-600">
-              <p>{error}</p>
+            <div className="text-center text-red-600 p-4">
+              <p className="font-semibold">Erro no Modelo 3D</p>
+              <p className="text-sm mt-2">{error}</p>
+              <p className="text-xs mt-1 text-gray-500">Caminho: {modelPath}</p>
             </div>
           </div>
         )}
