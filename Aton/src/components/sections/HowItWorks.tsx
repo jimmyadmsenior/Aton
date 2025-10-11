@@ -134,7 +134,11 @@ export default function HowItWorks() {
             
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-red-200/20 via-orange-200/20 to-yellow-200/20 rounded-2xl blur-xl"></div>
-              <Model3D modelPath="/media/car-seat-deconstructed/source/model.glb" />
+              <Model3D 
+                modelPath="/media/car-seat-deconstructed/source/model.glb" 
+                height="h-96"
+                autoRotate={true}
+              />
             </div>
           </div>
         </div>
@@ -172,7 +176,11 @@ export default function HowItWorks() {
             
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-green-200/20 via-emerald-200/20 to-teal-200/20 rounded-2xl blur-xl"></div>
-              <Model3D modelPath="/media/automotive-seat-design/source/model.glb" />
+              <Model3D 
+                modelPath="/media/car-seat-design/source/model.glb" 
+                height="h-96"
+                autoRotate={true}
+              />
             </div>
           </div>
         </div>
