@@ -17,7 +17,7 @@ export default function LandingPage() {
           preload="auto"
           className="w-full h-full object-cover"
           style={{
-            filter: 'brightness(2.2) contrast(0.6) saturate(0.2)',
+            filter: 'brightness(2.4) contrast(0.6) saturate(0.2)',
             opacity: 0.4
           }}
           onError={(e) => console.error('Video loading error:', e)}
