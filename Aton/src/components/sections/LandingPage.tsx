@@ -15,18 +15,21 @@ export default function LandingPage() {
           loop 
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover"
           style={{
-            filter: 'grayscale(100%) brightness(1.4) contrast(1.1) blur(0.3px)',
+            filter: 'brightness(2.2) contrast(0.6) saturate(0.2)',
+            opacity: 0.4
           }}
           onError={(e) => console.error('Video loading error:', e)}
           onLoadStart={() => console.log('Video loading started')}
           onCanPlay={() => console.log('Video can play')}
         >
-          <source src="/videos/aMPvRVYHFQxBoB0v2qyJln83jI.mp4" type="video/mp4" />
+          <source src="/video/Vídeo_Seção_Inicial.mp4" type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/25 to-white/40"></div>
+        {/* Filtro branco overlay mais intenso */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/50 to-white/70"></div>
+        <div className="absolute inset-0 bg-white/40"></div>
       </div>
 
 

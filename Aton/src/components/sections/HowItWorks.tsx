@@ -224,13 +224,14 @@ export default function HowItWorks() {
                     </div>
                   </div>
                   <h4 className="text-xl font-semibold text-white mb-6 text-center">
-                    Honda Civic Type R 2023
+                    Honda Civic Type R 2018
                   </h4>
                   <div className="relative">
                     <div className="absolute -inset-2 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-xl"></div>
                     <Model3D 
-                      modelPath="/media/2023-honda-civic-type-r/2023_honda_civic_type_r.glb" 
+                      modelPath="/media/2018_honda_civic_type_r.glb" 
                       height="h-80"
+                      autoRotate={true}
                     />
                   </div>
                 </div>
@@ -256,8 +257,9 @@ export default function HowItWorks() {
                   <div className="relative">
                     <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-xl"></div>
                     <Model3D 
-                      modelPath="/media/toyota-corolla-2020/source/model.glb" 
+                      modelPath="/media/toyota-corolla-2020/source/MDL13625_reversed.glb" 
                       height="h-80"
+                      autoRotate={true}
                     />
                   </div>
                 </div>
