@@ -1,5 +1,8 @@
 # Aton - Proposta de Reaproveitamento de Bancos Automotivos Toyota
 
+
+![Banco Aton em funcionamento](Aton/public/video/banco-aton.gif)
+
 Aton apresenta uma solução inovadora de economia circular para a Toyota, focada no reaproveitamento inteligente de bancos automotivos. Nossa proposta revoluciona o processo de desmontagem, processamento e reutilização de componentes de bancos, transformando desperdício em oportunidade sustentável.
 
 ## 🚀 Tecnologias Utilizadas
