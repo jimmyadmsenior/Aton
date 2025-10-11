@@ -49,7 +49,7 @@ export default function ModernHeader() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="relative">
                 <Image
-                  src="/images/team/Logo.jpg"
+                  src="/images/Logo.png"
                   alt="Aton Logo"
                   width={40}
                   height={40}
