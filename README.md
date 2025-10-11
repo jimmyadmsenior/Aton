@@ -1,34 +1,37 @@
+
 ![Capa do Projeto Aton](Aton/public/images/Capa_Readme.png)
 
 # Aton - Proposta de Reaproveitamento de Bancos Automotivos Toyota
 
 Aton apresenta uma solução inovadora de economia circular para a Toyota, focada no reaproveitamento inteligente de bancos automotivos. Nossa proposta revoluciona o processo de desmontagem, processamento e reutilização de componentes de bancos, transformando desperdício em oportunidade sustentável.
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias Utilizadas
 
-- **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
+- **Frontend**: Next.js 14 (App Router), React, TypeScript, Tailwind CSS
 - **Animações**: Framer Motion
-- **Visualização 3D**: Three.js + React Three Fiber
-- **Modelos 3D**: GLB/GLTF format
-- **Styling**: Tailwind CSS + CSS personalizado
-- **Componentes**: React components otimizados
+- **Visualização 3D**: Three.js (importação dinâmica)
+- **Modelos 3D**: GLB/GLTF
+- **Ícones**: Lucide React, Heroicons
+- **Styling**: Tailwind CSS + CSS customizado
+- **Componentização**: React moderno (Hooks, componentes funcionais)
 - **Deploy**: Vercel (Next.js nativo)
+
 
 ## 📋 Funcionalidades
 
 ### ✅ Versão Atual - Proposta Toyota
-- [x] **Landing Page Completa**: Apresentação da proposta de reaproveitamento
-- [x] **Seção "Sobre o Projeto"**: Problemas identificados e soluções propostas
-- [x] **"Como Funciona"**: Sistema em 3 camadas (Desmontagem → Processamento → Compartilhamento)
-- [x] **Visualização 3D Interativa**: 4 modelos 3D implementados
+- **Landing Page Completa**: Apresentação da proposta de reaproveitamento
+- **Seção "Sobre o Projeto"**: Problemas identificados e soluções propostas
+- **"Como Funciona"**: Sistema em 3 camadas (Desmontagem → Processamento → Compartilhamento)
+- **Visualização 3D Interativa**: 4 modelos 3D implementados
   - Banco automotivo desconstruído (componentes internos)
   - Banco finalizado (resultado do reaproveitamento)
-  - Honda Civic Type R 2023 (aplicação prática)
+  - Honda Civic Type R 2018 (aplicação prática)
   - Toyota Corolla 2020 (implementação real)
-- [x] **Métricas de Impacto**: 2.340 kg de materiais processados, 90% de circularidade
-- [x] **Chatbot Inteligente**: Perguntas e respostas sobre sustentabilidade e o projeto
-- [x] **Design Responsivo**: Interface otimizada para todos os dispositivos
-- [x] **Animações Avançadas**: Framer Motion para experiência premium
+- **Métricas de Impacto**: 2.340 kg de materiais processados, 90% de circularidade
+- **Chatbot Inteligente**: Perguntas e respostas sobre sustentabilidade e o projeto
+- **Design Responsivo**: Interface otimizada para todos os dispositivos
+- **Animações Avançadas**: Framer Motion para experiência premium
 
 ### 🎯 Proposta de Valor
 - **Redução de Desperdício**: Aproveitamento de 85-90% dos componentes de bancos
@@ -74,15 +77,16 @@ npm run dev
 
 A aplicação estará disponível em `http://localhost:3000`
 
+
 ### Estrutura dos Modelos 3D
 
 Os modelos 3D devem estar localizados em:
 ```
 public/media/
 ├── car-seat-deconstructed/source/model.glb
-├── automotive-seat-design/source/model.glb
-├── 2023-honda-civic-type-r/2023_honda_civic_type_r.glb
-└── toyota-corolla-2020/source/model.glb
+├── car-seat-design/source/model.glb
+├── 2018_honda_civic_type_r.glb
+└── toyota-corolla-2020/source/MDL13625_reversed.glb
 ```
 
 ### Comandos Úteis
@@ -94,44 +98,31 @@ npm run build        # Build de produção
 npm run start        # Inicia servidor de produção
 npm run lint         # Executa ESLint
 
-# Banco de dados
-npm run db:migrate   # Executa migrações
-npm run db:generate  # Gera cliente Prisma
-npm run db:studio    # Interface visual do banco
-npm run db:seed      # Popula dados de exemplo
-npm run db:reset     # Reset completo do banco
-```
+
+
 
 ## 🗂️ Estrutura do Projeto
 
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── globals.css        # Estilos globais (scrollbars customizadas)
-│   ├── layout.tsx         # Layout global
-│   └── page.tsx           # Landing page principal
-├── components/            # Componentes React
-│   ├── 3DModel.tsx        # Componente de visualização 3D
-│   ├── providers.tsx      # Providers do React
-│   ├── layout/           # Componentes de layout
-│   │   ├── ModernHeader.tsx
-│   │   └── ModernFooter.tsx
-│   └── sections/         # Seções da landing page
-│       ├── LandingPage.tsx      # Hero section
-│       ├── AboutProject.tsx     # Sobre o projeto
-│       ├── HowItWorks.tsx       # Como funciona + Modelos 3D
-│       ├── SustainabilityImpact.tsx  # Métricas de impacto
-│       ├── Team.tsx             # Equipe
-│       └── Chatbot.tsx          # Chatbot interativo
+│   ├── globals.css         # Estilos globais
+│   ├── layout.tsx          # Layout global
+│   └── page.tsx            # Landing page principal
+├── components/             # Componentes React
+│   ├── 3DModel.tsx         # Componente de visualização 3D
+│   ├── providers.tsx       # Providers do React
+│   ├── layout/             # Componentes de layout (ModernHeader, ModernFooter)
+│   └── sections/           # Seções da landing page (LandingPage, AboutProject, HowItWorks, SustainabilityImpact, Team, Chatbot)
 
 public/
-├── media/                 # Modelos 3D e assets
+├── media/                  # Modelos 3D e assets
 │   ├── car-seat-deconstructed/
-│   ├── automotive-seat-design/
-│   ├── 2023-honda-civic-type-r/
-│   └── toyota-corolla-2020/
-├── images/               # Imagens estáticas
-└── videos/              # Vídeos (se houver)
+│   ├── car-seat-design/
+│   ├── toyota-corolla-2020/
+│   └── 2018_honda_civic_type_r.glb
+├── images/                 # Imagens estáticas (logo, equipe, capa)
+└── video/                  # Vídeos (se houver)
 ```
 
 ## 🏗️ Processo de Reaproveitamento - 3 Camadas
@@ -146,6 +137,7 @@ public/
 - **Output**: Componentes renovados e prontos para reutilização
 - **Impacto**: 85% de recuperação dos materiais originais
 
+
 ### 3ª Camada: Compartilhamento
 - **Processo**: Redistribuição na cadeia produtiva Toyota
 - **Output**: Novos bancos sustentáveis e peças de reposição
@@ -158,6 +150,7 @@ public/
 - **90%** de taxa de circularidade
 - **85%** de recuperação de componentes
 - **Redução significativa** da pegada de carbono
+
 
 ### Distribuição de Materiais
 - **45%** Espuma (1.053 kg)
@@ -173,38 +166,14 @@ public/
 4. "Como a Toyota se beneficia dessa solução?"
 5. "Qual o impacto na redução de resíduos?"
 
+
 ### Respostas Personalizadas
 - Sistema de keyword matching
-- Respostas contextualizes sobre sustentabilidade
+- Respostas contextualizadas sobre sustentabilidade
 - Interface moderna com design escuro/branco
 
-## 🌍 Deploy
-
-### Vercel (Recomendado)
-
-1. **Push para GitHub**
-```bash
-git add .
 git commit -m "Initial commit"
 git push origin main
-```
-
-2. **Configure o Vercel**
-- Conecte seu repositório no [Vercel](https://vercel.com)
-- Configure as variáveis de ambiente
-- Vercel detectará automaticamente o Next.js
-
-3. **Configure o Banco em Produção**
-```bash
-# Execute as migrações em produção
-npx prisma migrate deploy
-
-# (Opcional) Popule dados iniciais
-npm run db:seed
-```
-
-### Variáveis de Ambiente (Não necessárias para esta versão)
-Esta versão é uma apresentação estática focada em demonstrar a proposta. Não requer configuração de banco de dados ou autenticação.
 
 ## 🎨 Customizações Visuais
 
