@@ -112,7 +112,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+# public - REMOVIDO: No Next.js, a pasta public deve ser versionada
 
 # Storybook build outputs
 .out
